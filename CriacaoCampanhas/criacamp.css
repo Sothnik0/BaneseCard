@@ -3,6 +3,10 @@
     margin: 0;
     padding: 0;
 }
+body {
+    background-image: url(../images/Rectangle\ 28.png);
+    height: 60rem;
+}
 
 nav {
     background-color: #fff;
@@ -65,77 +69,14 @@ li{
     top: 3.4rem;
 }
 
-/*info*/
-
-p {
-    color: #f8f6f0;
-    font-family: 'Quicksand'; 
-    font-size: 18px; 
-    font-weight: bolder; 
-
-    text-align: left;
-    margin-left: 1rem;
-}
-
-#banesecard{
-    margin-left: 20rem;
-}
-
-#mny {
-    font-size: 2rem;
-}
-
-#content-wrapper {
-    display: flex;
-    align-items: center; 
-    justify-content: space-between;
-    margin-left: 6rem;
-    margin-top: 5rem;
-}
-
-#sobre-img {
-    width: 30%; 
-    height: auto;
-    margin-right: 2rem;
-    margin-left: 2;
-}
+/*CARD*/
 
 #card {
-    width: 55%; 
-    height: auto;
-    margin-right: 4rem;
-    
-    border-radius: 2rem;
-    background: linear-gradient(270deg, rgba(18,191,119,1) 0%, rgba(16,154,97,1) 50%, rgba(10,111,69,1) 100%);
-    filter: drop-shadow(-1px, -1px, 24px, 0.25);
-    backdrop-filter: blur(40px);
-    padding: 2rem;
-}
+    width: 100vh;
+    height: 30rem;
 
-p {
-    color: #f8f6f0;
-    font-family: 'Quicksand'; 
-    font-size: 18px; 
-    font-weight: bolder; 
-    text-align: left;
-}
-
-h2 {
-    color: #f8f6f0 !important; 
-    font-family: 'Quicksand'; 
-    font-size: 18px; 
-    font-weight: bolder; 
-    text-align: center;
-}
-
-/*main*/
-
-#grid {
-    width: 200vh;
-    height: 40rem;
-
-    margin-left: 2rem;
-    margin-top: 12rem;
+    margin-left: 6rem;
+    margin-top: 10rem;
 
     border-radius: 2rem;
 
@@ -146,45 +87,68 @@ h2 {
     backdrop-filter: blur(40px);
 }
 
-.whitecontainer{
-    width: 230px;
-    height: 280px;
-
-    background-color: white;
-
-    border-radius: 12px;
-
-    margin-left: 3.8rem;
-}
-
-h3 {
-    color: #fff;
+label, p {
+    color: #f8f6f0;
     font-family: 'Quicksand'; 
     font-size: 18px; 
 
+    text-align: left;
     margin-left: 1rem;
 }
 
-.plusbtn{
-    width: 255px;
-    padding: 20px;
-
-    border: solid #fff;
-
+#inp {
+    padding: 10px;
+    border: solid white 1px;
     border-radius: 12px;
 
-    text-wrap: nowrap;
+    width: 30rem;
 
-    margin-left: 5px;
+    margin-top: 10px;
+}
+
+
+#quest{
+    position: relative;
+    bottom: 28.2rem;
+    left: 8rem;
+
+    width: 30rem;
+}
+
+#data {
+    display: flex;
+    flex-direction: column;
+}
+
+#criarcamp {
+    background-color: #f8f6f0;
+
+    border: solid white 1px;
+    border-radius: 12px;
+    padding: 10px;
+
+    width: 18rem;
+
+    margin-left: 9.5rem;
 
     font-family: 'Quicksand'; 
     font-size: 18px; 
-    font-weight: bolder; 
+    font-weight: bolder;
+}
+
+#image {
+    position: relative;
+    left: 40rem;
+    bottom: 27rem;
 }
 
 /*FOOTER*/
 
 #footer {
+    position: absolute;
+
+    top: 60rem;
+
     width: 211.1vh;
     height: 35vh;
 
@@ -200,4 +164,5 @@ h3 {
 
 .footertxt{
     margin-left: 55rem;
+    z-index: 2;
 }
