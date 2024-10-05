@@ -2,19 +2,11 @@
     margin: 0;
     padding: 0;
 }
-
 body {
-    font-family: 'Quicksand', sans-serif;
-    
-}
-.container {
-    display: flex;
-    flex-direction: column;
-}
-.imagem-linhas img {
-    height: 90px;
-    width: 1495px;
-    margin-left: 10px;
+    background-image: url(../images/Rectangle\ 28.png);
+    height: 60rem;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 nav {
@@ -26,6 +18,20 @@ nav {
     text-decoration: none;
 }
 
+#BaneseBase {
+    position: absolute;
+
+    border-radius: 17px;
+
+    left: 7rem;
+    top: -2rem;
+
+    width: 225px;
+    height: 174px;
+    background-color: #0A6F45;
+
+    z-index: 1;
+}
 
 ul {
     display: flex;
@@ -56,271 +62,75 @@ li{
     white-space: nowrap;
 }
 
-
-.logotopo {
-    background-color: #0A6F45;
-    width: 220px;
-    height: 160px;
-    border-radius: 17px;
-    margin-top: -190px;
-    margin-left: 150px;
-}
-
-.logotopo img {
+#BaneseCima {
     position: relative;
-    left: 60px;
-    top: 50px;
-    width: 95px;
+    left: 3.8rem;
+    top: 3.4rem;
 }
 
-.campanhas {
-    font-family: 'Quicksand', sans-serif;
-    margin-top: 30px;
-    margin-left: 100px;
+/*Principal*/
+
+p {
+    font-family: 'Quicksand'; 
+    font-size: 18px; 
+    font-weight: bolder;
 }
 
-.ativas {
-    font-family: Arial, Helvetica, sans-serif;
-    color: rgba(128, 128, 128, 0.856);
-    margin-top: 10px;
+#activity {
+    font-weight: lighter;
+    color: rgb(165, 165, 165);
 }
 
-.progresso {
-    margin-top: -40px;
-    margin-left: 1300px;
+#backgroundCamp{
+    width: 84.3rem;
+    height: 50rem;
+
+    background-color: #fff;
 }
 
-.cashback {
-    width: 290px;
-    height: 130px;
-    border: 1px solid rgba(172, 172, 172, 0.771);
-    border-radius: 7px;
-    background-color: transparent;
+#firsttext {
     display: flex;
-    flex-direction: column;
-    padding: 20px;
-    margin-top: 40px;
-    margin-left: -100px;
+    justify-content: space-between;
 }
 
-.cashback img {
-    margin-left: -8px;
-    margin-top: 2px;
-    place-items: left;
+.cardCamp {
+    height: 14rem;
+    width: 22rem;
+
+
+    border: solid black 1px;
+    border-radius: 1rem;
 }
 
-.cashbackh2 {
-    font-family: Arial, Helvetica, sans-serif;
-    margin-left: 140px;
-    margin-top: -130px;
-    width: 200px;
-
-}
-
-.cashbackP {
-    margin-left: 140px;
-    margin-top: 9px;
-    width: 160px;
-    color: rgba(129, 129, 129, 0.975);
-
-}
-
-.IIcampanha {
-    width: 290px;
-    height: 130px;
-    border: 1px solid rgba(172, 172, 172, 0.771);
-    border-radius: 7px;
-    background-color: transparent;
+.content {
     display: flex;
-    flex-direction: column;
-    padding: 20px;
-    margin-top: 10px;
-    margin-left: -100px;
+    flex-direction: row;
+
+    margin-left: 1rem;
+    margin-top: 2rem;
+
+    height: 10rem;
 }
 
-.IIcampanha img {
-    margin-left: -8px;
-    margin-top: 2px;
-    place-items: left;
-}
+#footer {
+    position: absolute;
 
-.IIcampoffh2 {
-    font-family: Arial, Helvetica, sans-serif;
-    margin-left: 140px;
-    margin-top: -130px;
-    width: 200px;
+    top: 60rem;
 
-}
+    width: 84.3rem;
+    height: 13rem;
 
-.IIcampoffP {
-    margin-left: 140px;
-    margin-top: 9px;
-    width: 160px;
-    color: rgba(129, 129, 129, 0.975);
-}
-
-.IIIcampanha {
-    width: 290px;
-    height: 130px;
-    border: 1px solid rgba(172, 172, 172, 0.771);
-    border-radius: 7px;
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    margin-top: -350px;
-    margin-left: 370px;
-}
-
-.IIIcampanha img {
-    margin-left: -8px;
-    margin-top: 2px;
-    place-items: left;
-}
-
-.IIIcampoffh2 {
-    font-family: Arial, Helvetica, sans-serif;
-    margin-left: 140px;
-    margin-top: -130px;
-    width: 200px;
-
-
-}
-
-.IIIcampoffP {
-    margin-left: 140px;
-    margin-top: 9px;
-    width: 160px;
-    color: rgba(129, 129, 129, 0.975);
-}
-
-.IIIIcampanha {
-    width: 290px;
-    height: 130px;
-    border: 1px solid rgba(172, 172, 172, 0.771);
-    border-radius: 7px;
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    margin-top: 10px;
-    margin-left: 370px;
-}
-
-.IIIIcampanha img {
-    margin-left: -8px;
-    margin-top: -1px;
-    place-items: left;
-}
-
-.IIIIcampoffh2 {
-    font-family: Arial, Helvetica, sans-serif;
-    margin-left: 140px;
-    margin-top: -130px;
-    width: 200px;
-
-}
-
-.IIIIcampoffP {
-    margin-left: 140px;
-    margin-top: -1px;
-    width: 160px;
-    color: rgba(129, 129, 129, 0.975);
-}
-
-.IIIIIcampanha {
-    width: 290px;
-    height: 130px;
-    border: 1px solid rgba(172, 172, 172, 0.771);
-    border-radius: 7px;
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    margin-top: -355px;
-    margin-left: 850px;
-}
-
-.IIIIIcampanha img {
-    margin-left: -8px;
-    margin-top: 2px;
-    place-items: left;
-}
-
-.IIIIIcampoffh2 {
-    font-family: Arial, Helvetica, sans-serif;
-    margin-left: 140px;
-    margin-top: -130px;
-    width: 200px;
-
-}
-
-.IIIIIcampoffP {
-    margin-left: 140px;
-    margin-top: 2px;
-    width: 160px;
-    color: rgba(129, 129, 129, 0.975);
-}
-
-.IIIIIIcampanha {
-    width: 290px;
-    height: 130px;
-    border: 1px solid rgba(172, 172, 172, 0.771);
-    border-radius: 7px;
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    margin-top: 10px;
-    margin-left: 850px;
-}
-
-.IIIIIIcampanha img {
-    margin-left: -8px;
-    margin-top: 2px;
-    place-items: left;
-}
-
-.IIIIIIcampoffh2 {
-    font-family: Arial, Helvetica, sans-serif;
-    margin-left: 140px;
-    margin-top: -130px;
-    width: 200px;
-
-}
-
-.IIIIIIcampoffP {
-    margin-left: 140px;
-    margin-top: 2px;
-    width: 160px;
-    color: rgba(129, 129, 129, 0.975);
-}
-
-.CAMPANHAS {
-    justify-content: center;
-    align-items: center;
-    margin-left: 200px;
-}
-
-.footer {
     background-color: #0A6F45;
-    width: 1542px;
-    height: 140px;
-    margin-left: -6px;
-
 }
 
-.texto {
-    font-family: 'Quicksand', sans-serif;
+#BaneseBaixo{
+    position: relative;
+
+    top: 5rem;
+    left: 5rem;
+}
+
+.footertxt{
+    margin-left: 55rem;
     color: white;
-    font-weight: bold;
-    font-size: 14px;
-    margin-left: 1100px;
-    margin-top: -80px;
-}
-
-.footer img {
-    width: 90px;
-    margin-left: 160px;
-    margin-top: 20px
 }
