@@ -22,39 +22,41 @@
     </nav>
 </header>
 <body>
-    <section id="card"></section>
-        <div id="quest">
-            <div class="row">
-                <div class="col-sm">
-                    <div id="data">
-                        <label for="">Nome <br>
-                            <input type="text" name="name" id="inp">
-                        </label>
-                        <br>
-                        <label for="">Fim do evento <br>
-                            <input type="datetime" name="time" id="inp">
-                        </label>
-                    </div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <section id="card">
                     <br>
-                    <div id="checkbox">
-                        <p>Mecânicas: </p>
-                            <label for=""><input type="checkbox" name="" id="chk1">
-                            Mecânica transacional</label>
-                        <br>
-                            <label for=""><input type="checkbox" name="" id="chk2">
-                            Mecânica de acúmulo</label>
-                        <br>
-                            <label for=""><input type="checkbox" name="" id="chk3">
-                            Mecânica de frequência</label>
-                    </div>
+                    <label>Nome <br>
+                        <input class="criarcamp" type="text" name="">
+                    </label>
                     <br>
-                    <button id="criarcamp">CRIAR CAMPANHA</button>
-                  </div>
-                  <div class="col-sm">
-                    <img id="image" src="../images/bloboldguy.png" alt="Idoso" height="500px" width="500px">
-                  </div>
+                    <br>
+                    <label>Data final da promoção <br>
+                        <input class="criarcamp" type="datetime" name="">
+                    </label>
+                    <br><br><br>
+                    <p>Mecânicas: </p>
+                    <label for=""><input type="checkbox" name="checkbox">
+                    Mecânica transacional</label>
+                    <br>
+                    <label for=""><input type="checkbox" name="checkbox">
+                    Mecânica de acúmulo</label>
+                    <br>
+                    <label for=""><input type="checkbox" name="checkbox">
+                    Mecânica de frequência</label>
+                    <br><br><br><br>
+                    <div id="btnpos">
+                        <button id="btn" type="submit">Criar campanha</button>
+                    </div>
+                </section>
+            </div>
+        
+            <div class="col-md-6">
+                <img id="oldimage" src="../images/bloboldguy.png" alt="" srcset="" height="500px" width="500px">
             </div>
         </div>
+    </div>
 </body>
 
 <footer id="footer">

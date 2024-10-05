@@ -5,12 +5,12 @@
 }
 body {
     background-image: url(../images/Rectangle\ 28.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 nav {
     background-color: #fff;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 #sobre, #mulvi, #principal {
