@@ -4,27 +4,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../images/logo2basese.svg" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
     <title>Banese Card</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="telascampuser.css" />
   </head>
   <body>
     <header>
-      <div class="logo">
-        <img src="Banese logo.jpeg" alt="Banese Card Logo" />
-      </div>
       <nav>
-        <ul>
-          <li><a href="#">Sobre</a></li>
-          <li><a href="#">Mulvi</a></li>
-          <li><a href="#">Site principal</a></li>
-        </ul>
+          <div id="BaneseBase">
+              <img id="BaneseCima" src="../images/logo2basese.svg" alt="BaneseLogo" srcset="">
+          </div>
+          <ul>
+              <li><a id="sobre" href="../Sobre/sobre.html" target="_blank" rel="Sobre">Sobre</a></li>
+              <li><a id="mulvi" href="../Mulvi/mulvi.html" target="_blank" rel="Mulvi">Mulvi</a></li>
+              <li><a id="principal" href="https://www.banesecard.com.br/" target="_blank" rel="Site principal">Site principal</a></li>
+          </ul>
       </nav>
-    </header>
-
+  </header>   
+<br><br><br><br><br><br><br>
     <main>
+      <div class="container">
+         <div class="row">
+            <div id="firsttext">
+                <p>Campanhas</p>
+                <p>Progresso</p>
+            </div>
+            <p id="activity">ativas</p>
+         </div>
+     </div>
+    
       <section class="campanhas">
-        <h2>Campanhas</h2>
-        <p>ativas</p>
         <div class="grid-container">
           <div class="card">
             <img src="img1.JPG" alt="25% de cashback">
@@ -64,15 +74,15 @@
           </div>
         </div>
       </section>
-
-      <section class="progresso">
-        <h2>Progresso</h2>
-      </section>
     </main>
 
-    <footer>
-      <p>&copy; 2024 Banco do Estado de Sergipe S.A.</p>
-      <a href="#">Política de privacidade</a>
-    </footer>
+    <footer id="footer">
+      <div>
+          <img id="BaneseBaixo" src="../images/logo2basese.svg" alt="">
+              <p class="footertxt">© 2024 Banco do Estado de Sergipe S.A.</p>
+              <p class="footertxt">Politica de privacidade</p>
+          </div>
+      </div>
+  </footer>
   </body>
 </html>
