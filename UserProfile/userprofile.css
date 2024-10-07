@@ -198,14 +198,17 @@ h6{
 .plusbtn a {
     color: black; 
     text-decoration: none;
+}
+
+.plusbtn {
     transition: 0.2s;
 }
 
-.plusbtn a:hover{
+.plusbtn:hover{
     color:black; 
     text-decoration: none; 
     transition: 0.2s;
-    transform: scale(2);
+    transform: scale(1.1);
 }
 
 .plusbtn a:visited{
