@@ -1,0 +1,385 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+a:hover {
+  opacity: 0.7;
+}
+img {
+  width: 150px;
+  height: 60px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  background: #109A61;
+  height: 8vh;
+}
+main {
+  background: #109A61 no-repeat center center;
+  background-size: cover;
+  height: 92vh;
+}
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+.nav-list li {
+  letter-spacing: 3px;
+  margin-left: 35px;
+}
+.linha {
+  position: absolute;
+  background: white;
+  width: 100%;
+  height: 1px;
+}
+.mobile-menu {
+  display: none;
+  cursor: pointer;
+}
+.mobile-menu div {
+  width: 32px;
+  height: 2px;
+  background: #fff;
+  margin: 8px;
+  transition: 0.3s;
+}
+.textura {
+  width: 43%;
+  height: 91vh;
+}
+.vetor {
+  top: 29%;
+  left: 10%;
+  position: absolute;
+  width: 54vh;
+  height: 60.8vh;
+}
+.man {
+  transform: rotate(-2deg);
+  position: absolute;
+  z-index: 2;
+  top: 14.90%;
+  left: 10.25%;
+  height: 75vh;
+  width: 54vh;
+  background: none;
+}
+.tafacil {
+  position: absolute;
+  top: 30%;
+  left: 37%;
+  width: 58vh;
+  height: 26vh;
+}
+.btn-shine {
+  position: absolute;
+  top: 56%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  padding: 12px 48px;
+  color: #ffffff;
+  background: linear-gradient(to right, #0ac476 0, #109A61 10%, #00ff95 20%);
+  background-position: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
+  animation-fill-mode: forwards;
+  -webkit-text-size-adjust: none;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  white-space: nowrap;
+  font-family: "Poppins", sans-serif;
+}
+@-moz-keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 180px;
+  }
+  100% {
+    background-position: 180px;
+  }
+}
+@-webkit-keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 180px;
+  }
+  100% {
+    background-position: 180px;
+  }
+}
+@-o-keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 180px;
+  }
+  100% {
+    background-position: 180px;
+  }
+}
+@keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 180px;
+  }
+  100% {
+    background-position: 180px;
+  }
+}
+.cart {
+  opacity: 0;
+  transform: rotate(-20deg);
+  position: absolute;
+  top: 25%;
+  left: 68%;
+  width: 40vh;
+  height: 30vh;
+}
+.cartblack {
+  position: absolute;
+  transform: rotate(-2deg);
+  top: 15%;
+  left: 61%;
+  width: 38vh;
+  height: 39vh;
+}
+.carthand {
+  position: absolute;
+  top: 30%;
+  left: 66%;
+  width: 39vh;
+  height: 70vh;
+}
+.stards {
+  transform: rotate(4deg);
+  position: absolute;
+  top: 24%;
+  left: 76.25%;
+  width: 7vh;
+  height: 7vh;
+}
+.vetor2 {
+  position: absolute;
+  width: 45vh;
+  height: 22vh;
+  top: 78%;
+  left: 77.59%;
+}
+.x {
+  display: none;
+}
+@media (max-width: 1600px) {
+
+  #image-track {
+    opacity: 0;
+  }
+  .stards {
+    display: none;
+  }
+  .vetor {
+    top: 38%;
+    left: 7%;
+    width: 48vh;
+    height: 54vh;
+  }
+  .man {
+    top: 24.7%;
+    left: 7%;
+    height: 67vh;
+    width: 49vh;
+  }
+  .tafacil {
+    top: 32%;
+    left: 35%;
+    width: 55vh;
+    height: 26vh;
+  }
+  .btn-shine {
+    top: 58.3%;
+  }
+}
+@media (min-width: 870px) and (max-width: 1260px) {
+  .btn-shine{
+    position: fixed;
+    transform: translate(-50%, -50%);
+    left: 71%;
+    top: 54.4%;
+  }
+  .textura {
+    display: none;
+  }
+  .tafacil {
+    top: 34%;
+    left: 50%;
+    width: 40vh;
+    height: 20vh;
+  }
+  .man {
+    top: 32.4%;
+    left: 10%;
+    height: 54vh;
+    width: 43vh;
+  }
+  .vetor {
+    position: fixed;
+    top: 41%;
+    left: 10%;
+    width: 40vh;
+    height: 45vh;
+  }
+  .cartblack {
+    display: none;
+  }
+  .carthand {
+    opacity: 0;
+  }
+  #image-track {
+    opacity: 0;
+  }
+}
+@media (max-width: 870px) {
+
+  .btn-shine {
+    display: none;
+  }
+  .x {
+    display: block;
+    z-index: 3;
+    position: fixed;
+    top: 80%;
+    left: 20%;
+    width: 10vh;
+    height: 10vh;
+    transform: translate(-50%, -50%);
+  }
+  .man {
+    position: fixed;
+    top: 58.3%;
+    left: 50%;
+    height: 53vh;
+    width: 38vh;
+    transform: translate(-50%, -50%);
+  }
+  .textura {
+    display: none;
+  }
+  .cartblack {
+    display: none;
+  }
+  .carthand {
+    display: none;
+  }
+  #image-track {
+    opacity: 0;
+  }
+  .vetor {
+    position: fixed;
+    top: 65%;
+    left: 49%;
+    width: 36vh;
+    height: 39vh;
+    transform: translate(-50%, -50%);
+  }
+  .stards {
+    display: block;
+    position: fixed;
+    transform: rotate(19deg);
+    left: 80%;
+    top: 28%;
+    transform: translate(-50%, -50%);
+  }
+  .tafacil {
+    position: fixed;
+    top: 23%;
+    left: 50%;
+    width: 30vh;
+    height: 14vh;
+    transform: translate(-50%, -50%);
+  }
+}
+@media (max-width: 950px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav-list {
+    z-index: 4;
+    position: absolute;
+    top: 8vh;
+    right: 0;
+    width: 100vw;
+    height: 92vh;
+    background: #109A61;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+  }
+  .nav-list li {
+    margin-left: 0;
+    opacity: 0;
+  }
+  .mobile-menu {
+    display: block;
+  }
+}
+.nav-list.active {
+  transform: translateX(0);
+}
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.mobile-menu.active .line1 {
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+.mobile-menu.active .line2 {
+  opacity: 0;
+}
+.mobile-menu.active .line3 {
+  transform: rotate(45deg) translate(-5px, -7px);
+}
+#image-track {
+  z-index: 4;
+  display: flex;
+  gap: 5vh;
+  position: absolute;
+  left: 60%;
+  top: 80%;
+  transform: translate(0%, -50%); 
+  user-select: none;
+}
+#image-track > .image {
+  border-radius: 15px;
+  width: 20vh;
+  height: 30vh;
+  object-fit: cover;
+  object-position: 100% center;
+}
