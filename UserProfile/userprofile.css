@@ -125,12 +125,11 @@ p {
 .whitecontainer{
     width: 230px;
     height: 280px;
-
     background-color: white;
 
     border-radius: 12px;
 
-    margin-left: 3.8rem;
+    margin-left: 6.2rem;
 }
 
 button {
@@ -180,9 +179,8 @@ h6{
 /*FOOTER*/
 
 #footer {
-    width: 211.1vh;
-    height: 35vh;
-
+    width: 118.95rem;
+    height: 13rem;
     background-color: #0A6F45;
 }
 
@@ -195,4 +193,22 @@ h6{
 
 .footertxt{
     margin-left: 55rem;
+}
+
+.plusbtn a {
+    color: black; 
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.plusbtn a:hover{
+    color:black; 
+    text-decoration: none; 
+    transition: 0.2s;
+    transform: scale(2);
+}
+
+.plusbtn a:visited{
+    color:black; 
+    text-decoration: none;    
 }

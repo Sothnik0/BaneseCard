@@ -146,22 +146,25 @@ label, p {
 
 #footer {
     position: absolute;
-
+  
+    margin-top: 5rem;
+  
     top: 60rem;
-
-    width: 84.3rem;
-    height: 15rem;
-
+  
+    width: 118.95rem;
+    height: 13rem;
+  
     background-color: #0A6F45;
-}
-
-#BaneseBaixo{
+  }
+  
+  #BaneseBaixo{
     position: relative;
-
+  
     top: 5rem;
     left: 5rem;
-}
-
-.footertxt{
+  }
+  
+  .footertxt{
     margin-left: 55rem;
-}
+    color: white;
+  }
