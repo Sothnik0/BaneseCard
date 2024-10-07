@@ -79,14 +79,14 @@ p {
 #activity {
     font-weight: lighter;
     color: rgb(165, 165, 165);
-    background-color: white;
+    background: linear-gradient(270deg, rgba(18,191,119,1) 0%, rgba(16,154,97,1) 50%, rgba(10,111,69,1) 100%);
     padding: 10px;
   }
   
   #firsttext {
     display: flex;
     justify-content: space-between;
-    background-color: white;
+    background: linear-gradient(270deg, rgba(18,191,119,1) 0%, rgba(16,154,97,1) 50%, rgba(10,111,69,1) 100%);
     padding: 10px;
   }
 
