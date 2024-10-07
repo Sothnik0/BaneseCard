@@ -184,6 +184,15 @@ h2 {
     margin-left: 0px;
 }
 
+.percentual0 { 
+    color: black;
+    font-family: 'Quicksand'; 
+    font-size: 23px; 
+    font-weight: bolder;
+    margin-left: 0px;
+    white-space: nowrap;
+}
+
 h5 {
     color: black; 
     font-size: 16px; 
@@ -233,8 +242,19 @@ h3 {
     transition: transform 0.2s ease-in-out;
 }
 
+.no-underline {
+    text-decoration: none; 
+    color: inherit; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
 .circle-button:hover {
     transform: scale(1.1);
+    text-decoration: none;
 }
 
 .plus-sign {
