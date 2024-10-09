@@ -73,33 +73,36 @@ li{
 
 .image-container {
     position: relative; 
-    width: 500px; 
-    height: 500px; 
+    width: 100%;
+    max-width: 1000px; 
+    height: auto; 
 }
 
 .image1 {
     position: absolute; 
-    top: 25%; 
-    left: 7%; 
+    margin-top: -10%;
+    left: 30%; 
     width: 100%; 
+    max-width: 500px;
     height: auto; 
 }
 
 .image2 {
-    position: absolute;  
-    top: 8%; 
-    left: 3%;
-    width: 500px; 
+    position: absolute; 
+    margin-top: -19%; 
+    left: 28%;
+    width: 100%;
+    max-width: 500px; 
     height: auto; 
 }
 
 
 #card {
-    width: 80%;
-    max-width: 75%;
+    width: 100%;
+    max-width: 60%;
     height: 25rem;
 
-    margin-top: 40%;
+    margin-top: 20%;
 
     border-radius: 2rem;
 
@@ -165,8 +168,8 @@ select {
     border-radius: 2rem;
     padding: 5px;
 
-    margin-left: 6.8rem;
-    margin-top: 1rem;
+    margin-left: 30%;
+    margin-top: 1%;
 
     width: 15rem;
 }
@@ -183,7 +186,7 @@ select {
 #footer {
     position: absolute;
   
-    margin-top: 5rem;
+    margin-top: 6%;
   
     top: 60rem;
   
