@@ -80,8 +80,8 @@ li{
 
 .image1 {
     position: absolute; 
-    margin-top: -10%;
-    left: 30%; 
+    margin-top: -15%;
+    left: 13%; 
     width: 100%; 
     max-width: 500px;
     height: auto; 
@@ -89,8 +89,8 @@ li{
 
 .image2 {
     position: absolute; 
-    margin-top: -19%; 
-    left: 28%;
+    margin-top: -28%; 
+    left: 11%;
     width: 100%;
     max-width: 500px; 
     height: auto; 
@@ -102,7 +102,7 @@ li{
     max-width: 60%;
     height: 25rem;
 
-    margin-top: 20%;
+    margin-top: 40%;
 
     border-radius: 2rem;
 
@@ -179,9 +179,6 @@ select {
 
     margin-left: 1rem;
 }
-
-
-/*FOOTER*/
 
 #footer {
     position: absolute;
