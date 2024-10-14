@@ -49,9 +49,9 @@ header {
 }
 
 .img-logo {
-    display: flex;
-    height: 36vw;
-    z-index: 100;
+    height: auto;
+    max-width: 100%;
+    margin: auto;
 }
 
 .card-login {
