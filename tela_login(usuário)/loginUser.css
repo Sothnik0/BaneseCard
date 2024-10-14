@@ -66,6 +66,11 @@ li{
 
 /*Main*/
 
+#goToProfile {
+    color: #000000;
+    text-decoration: none;
+}
+
 h4, label {
     color: #f8f6f0;
     font-family: 'Quicksand'; 
