@@ -1,0 +1,179 @@
+body {
+    background-image: url("BaneseCard/images/Rectangle\ 28.png");
+}
+
+.background-top {
+    position: absolute;
+    background-color: #fff;
+    height: 45px;
+    width: 100%;
+    padding-top: 10px;
+    top: 0;
+    left: 0;
+    padding-bottom: 20px;
+}
+
+.card {
+    position: absolute;
+    background-color: #0A6F45;
+    width: 175px;
+    height: 100px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    display: flex;
+    margin-left: 120px;
+    top: 0%;
+    padding-top: 0%;
+}
+
+img {
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    height: 55%;
+}
+
+.sobre {
+    text-align: center;
+    font-size: 18px;
+    color: #000 ;
+    display: inline-block;
+    padding-left: 600px;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+.mulvi {
+    font-size: 18px;
+    color: #000 ;
+    display: inline-block;
+    padding-left: 40px;
+    font-family: sans-serif;
+    font-weight: 600
+}
+
+.site-principal {
+    font-size: 18px;
+    color: #000 ;
+    display: inline-block;
+    padding-left: 40px;
+    font-family: sans-serif;
+    font-weight: 600
+}
+
+.card-center {
+    background-color: #fff;
+    position: absolute;
+    height: 400px;
+    width: 50%;
+    margin-left: 410px;
+    margin-top: 230px;
+    display: flex;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.card-degrade {
+    margin-left: 220px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border-radius: 15px;
+    width: 300px;
+    height: 325px;
+    padding: 30px;
+    background: linear-gradient(to right,#0a6f45d7,#109A61,#12BF77);
+}
+
+.cashback {
+    margin-top: 3px;
+    text-align: center;
+    font-style: normal;
+    font-family: sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    height: 40px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #fff;
+    color: #000;
+}
+
+.cadastro {
+    margin: 8px;
+    font-style: normal;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #fff;
+}
+
+.cpf {
+    margin-top: 20px;
+    background-color: #fff;
+    color: #000;
+    height: 50px;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.senha {
+    margin-top: 20px;
+    background-color: #fff;
+    color: #000;
+    height: 50px;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.confirmar {
+    text-align: center;
+    background-color: #fff;
+    height: 30px;
+    width: 150px;
+    border-radius: 5px;
+    margin-left: 77px;
+    margin-top: 20px;
+    padding-top: 7px;
+    color: #000;
+}
+
+.img-campanha {
+    height: 460px;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+
+.card-bottom {
+    background-color: #0A6F45;
+    position: absolute;
+    width: 100%;
+    height: 170px;
+    left: 0;
+    bottom: 0;
+}
+
+.img-bottom {
+    margin-left: 120px;
+    height: 35%;
+    margin-top: -3.4%;
+    position: relative;
+    align-items: center;
+    justify-items: center;
+    display: block;
+}
+
+.banco-se {
+    position: relative;
+    color: #fff;
+    margin-left: 1400px;
+    padding-top: 40px;
+}
+
+.politica-de-privacidade {
+    position: relative;
+    color: #fff;
+    margin-left: 1400px;
+}
