@@ -233,3 +233,8 @@ h1 {
 .cashback-container button:hover {
     background-color: #e0e0e0;
 }
+
+#ancora {
+    color: black;
+    text-decoration: none;
+}
