@@ -169,3 +169,8 @@ main {
 .cadastre-se:hover {
   background-color: #218838;
 }
+
+a {
+  color: white;
+  text-decoration: none;
+}
