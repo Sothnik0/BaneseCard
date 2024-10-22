@@ -118,6 +118,11 @@ label, p {
     width: 20rem;
 }
 
+#error {
+    margin-left: 30px;
+    margin-bottom: -30px;
+}
+
 #btn {
     background-color: #f8f6f0;
 
@@ -151,7 +156,7 @@ label, p {
   
     top: 60rem;
   
-    width: 100%;
+    width: 84.3rem;
     height: 13rem;
   
     background-color: #0A6F45;

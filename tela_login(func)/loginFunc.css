@@ -86,7 +86,7 @@ h4 {
 
 #slider {
     position: relative;
-    right: 19rem;
+    right: 8.5rem;
     top: -1.09rem;
 }
 
@@ -105,8 +105,8 @@ h4 {
     backdrop-filter: blur(40px);
 }
 
-label, input {
-    margin-left: 1.8rem;
+label, input, #error {
+    margin-left: 1.4rem;
 }
 
 label {
@@ -137,10 +137,14 @@ input {
     font-weight: bolder; 
 }
 
+#error {
+    margin-bottom: -10px;
+}
+
 /*FOOTER*/
 
 #footer {
-    width: 100%;
+    width: 84.3rem;
     height: 13rem;
     background-color: #0A6F45;
 }

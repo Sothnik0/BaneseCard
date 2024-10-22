@@ -32,38 +32,41 @@
         <div class="col">
             <section id="card">
                 <br>
-                <div class="form-grid">
-                    <label>Valor mínimo da compra:<br>
-                        <input type="number" id="valor" name="valor" placeholder="R$" step="0.01" min="0">
-                    </label>
-                    <label for="data">Data:<br>
-                        <input type="date" id="data" name="data" placeholder="        /  /">
-                    </label>
-                    <label for="produto">Produto:<br>
-                        <select id="produto" name="produto">
-                            <option>Selecione o Produto</option>
-                            <option>Nanquim</option>
-                            <option>Cartão Dragão</option>
-                            <option>Peixoto</option>
-                            <option>Elo Mais</option>
-                            <option>Outros</option>
-                        </select>
-                    </label>
-                    <label for="mcc">MCC:<br>
-                        <input type="text" id="mcc" name="mcc" placeholder="MCC">
-                    </label>
-                    
-                    <label for="pan">Estabelecimento Comercial:<br>
-                        <input type="text" id="estabelecimento" name="estabelecimento">
-                    </label>
-                    <label for="pan">Modo de entrada do PAN:<br>
-                        <input type="text" id="pan" name="estabelecimento">
-                    </label>
-                </div>
-                <br><br>
-                <div id="btnpos">
-                    <button id="btn" type="submit"><a id="link" href="../CriacaoCampanhas/criacamp.html">Criar campanha</a></button>
-                </div>
+                <form id="form" action="">
+                    <div class="form-grid">
+                        <label>Valor mínimo da compra:<br>
+                            <input id="minValue" type="number" id="valor" name="valor" placeholder="R$" step="0.01" min="0">
+                        </label>
+                        <label for="data">Data:<br>
+                            <input id="date" type="date" id="data" name="data" placeholder="        /  /">
+                        </label>
+                        <label for="produto">Produto:<br>
+                            <select id="produto" name="produto">
+                                <option>Selecione o Produto</option>
+                                <option>Nanquim</option>
+                                <option>Cartão Dragão</option>
+                                <option>Peixoto</option>
+                                <option>Elo Mais</option>
+                                <option>Outros</option>
+                            </select>
+                        </label>
+                        <label for="mcc">MCC:<br>
+                            <input id="mcc" type="text" id="mcc" name="mcc" placeholder="MCC">
+                        </label>
+                        
+                        <label for="pan">Estabelecimento Comercial:<br>
+                            <input type="text" id="estabelecimento" name="estabelecimento">
+                        </label>
+                        <label for="pan">Modo de entrada do PAN:<br>
+                            <input type="text" id="pan" name="estabelecimento">
+                        </label>
+                    </div>
+                    <p id="error"></p>
+                    <br>
+                    <div id="btnpos">
+                        <input type="submit" value="Criar campanha" id="btn" type="submit"></input>
+                    </div>
+                </form>
             </section>
         </div>  
     </div>

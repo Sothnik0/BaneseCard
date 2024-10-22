@@ -26,33 +26,36 @@
         <div class="row align-items-center">
             <div class="col-md-6">
                 <section id="card">
-                    <br>
-                    <label>Nome <br>
-                        <input class="criarcamp" type="text" name="">
-                    </label>
-                    <br>
-                    <br>
-                    <label>Data final da promoção <br>
-                        <input class="criarcamp" type="datetime" name="">
-                    </label>
-                    <br><br>
-                    <p>Mecânicas: </p>
-                    <label for=""><input type="checkbox" name="checkbox">
-                    Mecânica transacional</label>
-                    <br>
-                    <label for=""><input type="checkbox" name="checkbox">
-                    Mecânica de acúmulo</label>
-                    <br>
-                    <label for=""><input type="checkbox" name="checkbox">
-                    Mecânica de frequência</label>
-                    <br><br>
-                    <label for="">Imagem da campanha
-                        <input type="file" name="" id="">
-                    </label>
-                    <br><br>
-                    <div id="btnpos">
-                        <button id="btn" type="submit"><a id="link" href="../Campanhas ativas/CampanhasAtivas.html">Criar campanha</a></button>
-                    </div>
+                    <form id="form" action="">
+                        <br>
+                        <label>Nome <br>
+                            <input id="campName" class="criarcamp" type="text" name="">
+                        </label>
+                        <br>
+                        <br>
+                        <label>Data final da promoção <br>
+                            <input id="campDate" class="criarcamp" type="date">
+                        </label>
+                        <br><br>
+                        <p>Mecânicas: </p>
+                        <label for=""><input type="checkbox" name="checkbox">
+                        Mecânica transacional</label>
+                        <br>
+                        <label for=""><input type="checkbox" name="checkbox">
+                        Mecânica de acúmulo</label>
+                        <br>
+                        <label for=""><input type="checkbox" name="checkbox">
+                        Mecânica de frequência</label>
+                        <br><br>
+                        <label for="">Imagem da campanha
+                            <input id="img" type="file" name="" id="">
+                        </label>
+                        <p id="error"></p>
+                        <br>
+                        <div id="btnpos">
+                            <input type="submit" value="Criar campanha" id="btn" type="submit"></input>
+                        </div>
+                    </form>
                 </section>
             </div>
         
@@ -72,4 +75,5 @@
         </div>
     </div>
 </footer>
+<script src="criacamp.js"></script>
 </html>
