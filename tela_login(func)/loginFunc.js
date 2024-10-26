@@ -1,29 +1,39 @@
-funcList = []
+const funcList = [
+    { login: "admin", password: "admin123", type: "adm" },
+    { login: "func1", password: "func123", type: "funcionario" },
+    { login: "func2", password: "func456", type: "funcionario" }
+];
 
-function Func(login, psw){
-    this.login = login,
-    this.psw = psw
+const form = document.getElementById("form");
+const loginFunc = document.getElementById("logonFunc");
+const pswFunc = document.getElementById("pswFunc");
+const error = document.getElementById("errorHandle");
+
+function authenticateFunc(login, password) {
+    return funcList.find(func => func.login === login && func.password === password);
 }
 
-const form = document.getElementById("form")
-const loginFunc = document.getElementById("logonFunc")
-const pswFunc = document.getElementById("pswFunc")
-
 form.addEventListener('submit', (event) => {
-    event.preventDefault()
-    if (loginFunc.value.length == 0 || pswFunc.length == 0){
-        Exception()
-    } else if (loginFunc.value.length >= 26 || pswFunc.length >= 26){
-        Exception()
-    } else {
-        funcList.push(new Func(loginFunc.value, pswFunc.value))
-        localStorage.setItem("funcName", loginFunc.value);
-        localStorage.setItem("funcPassword", pswFunc.value)
-        location.href = "../VisaoAdm/visaoadm.html"
-    }
-})
+    event.preventDefault();
 
-function Exception(){
-        error.innerHTML = "Login ou usuário inválidos, tente novamente"
-        error.style.color = "crimson"
+    if (loginFunc.value.length === 0 || pswFunc.value.length === 0) {
+        showError("Login ou senha inválidos, tente novamente");
+        return;
+    }
+
+    const authenticatedFunc = authenticateFunc(loginFunc.value, pswFunc.value);
+
+    if (authenticatedFunc) {
+        localStorage.setItem("funcName", authenticatedFunc.login);
+        localStorage.setItem("funcType", authenticatedFunc.type);
+        location.href = "../VisaoAdm/visaoadm.html";
+    } else {
+        showError("Login ou senha incorretos, tente novamente");
+    }
+});
+
+function showError(message) {
+    error.innerHTML = message;
+    error.style.color = "crimson";
+    setTimeout(() => error.innerHTML = "", 3000); 
 }
