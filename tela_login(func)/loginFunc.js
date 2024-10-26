@@ -1,3 +1,11 @@
+class Func {
+    constructor(login, password, type){
+        this.login = login,
+        this.password = password,
+        this.type = type
+    }
+}
+
 const funcList = [
     { login: "admin", password: "admin123", type: "adm" },
     { login: "func1", password: "func123", type: "funcionario" },
@@ -35,5 +43,6 @@ form.addEventListener('submit', (event) => {
 function showError(message) {
     error.innerHTML = message;
     error.style.color = "crimson";
+    error.style.marginLeft = "30px"
     setTimeout(() => error.innerHTML = "", 3000); 
 }

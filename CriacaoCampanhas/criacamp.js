@@ -1,33 +1,49 @@
 let CampDecorList = [];
 
-function CampDecor(campName, campDate, img){
-    this.campName = campName,
-    this.campDate = campDate,
-    this.img = img
+function CampDecor(campName, campDate, img) {
+    this.campName = campName;
+    this.campDate = campDate;
+    this.img = img;
 }
 
-const form = document.getElementById("form")
-
-const campName = document.getElementById("campName")
-const campDate = document.getElementById("campDate")
-const img = document.getElementById("img")
+const form = document.getElementById("form");
+const campName = document.getElementById("campName");
+const campDesc = document.getElementById("campDesc");
+const campDate = document.getElementById("campDate");
+const img = document.getElementById("img");
 
 form.addEventListener('submit', (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
-    if (campName.value == '' || campDate.value == ''){
-        Exception()
+    if (campName.value === '' || campDate.value === '') {
+        Exception();
     } else {
-        CampDecorList.push(new CampDecor(campName.value, campDate.value, img.value))
-        console.log(CampDecorList[0])
+        const file = img.files[0];
 
-        localStorage.setItem("campName", campName.value)
-        localStorage.setItem("img", img.value)
-        location.href = "../campanhafuncionario/campanhafunc.html"
+        if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function(event) {
+                const campDecor = new CampDecor(campName.value, campDate.value, event.target.result);
+                CampDecorList.push(campDecor);
+                console.log(CampDecorList[0]);
+
+                localStorage.setItem("campName", campName.value);
+                localStorage.setItem("campDesc", campDesc.value);
+                localStorage.setItem("img", event.target.result);
+
+                location.href = "../campanhafuncionario/campanhafunc.html";
+            };
+
+            reader.readAsDataURL(file);
+        } else {
+            alert('Por favor, escolha uma imagem.');
+        }
     }
-})
+});
 
-function Exception(){
-    error.innerHTML = "Login ou usuário inválidos, tente novamente"
-    error.style.color = "crimson"
+function Exception() {
+    const error = document.getElementById("error");
+    error.innerHTML = "Valores inválidos, tente novamente";
+    error.style.color = "crimson";
 }
