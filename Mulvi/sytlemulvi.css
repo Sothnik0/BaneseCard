@@ -2,6 +2,7 @@
 * {
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 nav {
@@ -92,10 +93,9 @@ p {
 }
 
 #sobre-img {
-    width: 30%; 
-    height: auto;
-    margin-right: 2rem;
-    margin-left: 2rem;
+    width: 27rem; 
+    height: 34rem;
+    margin-right: 7rem;
 }
 
 #card {
@@ -184,7 +184,7 @@ h3 {
 
 #footer {
     width: 100%;
-    height: 13rem;
+    height: 11.2rem;
 
     background-color: #0A6F45;
 }

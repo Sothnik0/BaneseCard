@@ -2,6 +2,7 @@
 * {
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 nav {
@@ -92,7 +93,7 @@ p {
 }
 
 #sobre-img {
-    width: 30%; 
+    width: 30%;
     height: auto;
     margin-right: 2rem;
     margin-left: 2;

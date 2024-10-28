@@ -89,10 +89,10 @@ p {
 }
 
 #card {
-    width: 180vh;
+    width: 170vh;
     height: 20rem;
 
-    margin-left: 6rem;
+    margin-left: 9rem;
     margin-top: 12rem;
 
     border-radius: 2rem;
@@ -107,11 +107,11 @@ p {
 /*main*/
 
 #grid {
+    display: grid;
     width: 80rem;
     height: 40rem;
 
-    margin-left: 19.5rem;
-    margin-top: 12rem;
+    margin: 7rem auto;
 
     border-radius: 2rem;
 
@@ -122,6 +122,7 @@ p {
     backdrop-filter: blur(40px);
 }
 
+
 .whitecontainer{
     width: 230px;
     height: 280px;
@@ -129,6 +130,7 @@ p {
 
     border-radius: 12px;
 
+    margin-top: -7rem;
     margin-left: 4.2rem;
 }
 
@@ -147,17 +149,21 @@ button {
     font-weight: bolder; 
 }
 
+#row {
+    margin-top: -3rem;
+}
+
 h3 {
     color: #fff;
     font-family: 'Quicksand'; 
-    font-size: 18px; 
-
-    margin-left: 1rem;
+    font-size: 20px; 
+    margin: 5rem;
 }
 
 h6{
     padding-top: 1rem;
 }
+
 
 .plusbtn{
     width: 255px;
@@ -169,16 +175,17 @@ h6{
 
     text-wrap: nowrap;
 
-    margin-left: 5px;
 
     font-family: 'Quicksand'; 
     font-size: 18px; 
     font-weight: bolder; 
 }
 
+
 /*FOOTER*/
 
 #footer {
+    margin-top: -7rem;
     width: 100%;
     height: 13rem;
     background-color: #0A6F45;
