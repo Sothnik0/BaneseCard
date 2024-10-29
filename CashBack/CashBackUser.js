@@ -3,8 +3,8 @@ const userName = localStorage.getItem("userName")
 const hello = document.getElementById("hello")
 hello.innerHTML = `Olá ${userName}`
 
-const button = document.getElementById("camp")
+const adcname = document.getElementById("adcname")
 
-button.addEventListener('click', () => {
+adcname.addEventListener('click', () => {
     location.href = "../Campanhas ativas/CampanhasAtivas.html"
 })

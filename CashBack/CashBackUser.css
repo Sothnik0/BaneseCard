@@ -298,29 +298,27 @@ button:active {
 }
 
 .addcamp {
-    cursor: pointer;
-    width: 100vh;
-    height: 4rem;
-    background-color: #fff;
+    text-transform: uppercase;
+    margin-top: 20px;
     border-radius: 12px;
-    padding: 18px;
-    margin-top: 27px;
-    margin-left: 13.5%;
+    color: rgb(18,191,119);
+    background-color: #fff;
+    font-size: 30px;
+    padding: 15px 30px;
+    cursor: pointer;
     transition: 0.5s;
+    border: 2px solid #fff;
+}
+
+.dec {
+    text-decoration: none;
 }
 
 .addcamp:hover {
-    background: rgb(18,191,119);
-    background: linear-gradient(270deg, rgba(18,191,119,1) 0%, rgba(16,154,97,1) 50%, rgba(10,111,69,1) 100%);
-    border: 1px solid #fff;
+    color: #fff;
+    background: rgb(5,191,119);
 }
 
-.adcname {
-    font-size: 25px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: 0.2s;
-}
 
 .adcname:hover {
     color: #fff;
