@@ -298,21 +298,32 @@ button:active {
 }
 
 .addcamp {
+    cursor: pointer;
     width: 100vh;
-    position: relative;
     height: 4rem;
     background-color: #fff;
     border-radius: 12px;
     padding: 18px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-top: 27px;
     margin-left: 13.5%;
+    transition: 0.5s;
+}
+
+.addcamp:hover {
+    background: rgb(18,191,119);
+    background: linear-gradient(270deg, rgba(18,191,119,1) 0%, rgba(16,154,97,1) 50%, rgba(10,111,69,1) 100%);
+    border: 1px solid #fff;
 }
 
 .adcname {
     font-size: 25px;
     text-transform: uppercase;
     cursor: pointer;
+    transition: 0.2s;
+}
+
+.adcname:hover {
+    color: #fff;
 }
 
 .fature {
