@@ -37,44 +37,84 @@
       <section class="campanhas">
         <div class="grid-container">
           <div class="card">
-            <img id="imgTest" src="../images/girltemplate.png" alt="25% de cashback">
-            <h3 id="title">25% de cashback</h3>
-            <p id="desc">Em compras de 120R$ ou mais, feitas no cartão</p>
-            <button class="cadastre-se">Cadastrar</button>
-          </div>
-          <div class="card">
-            <img src="../images/girltemplate2.png" alt="Descrição da campanha 2">
-            <h3>R$ 40 off</h3>
-            <p>Em compras de 400R$ ou mais, feitas no débito</p>
-            <button class="cadastre-se">Cadastrar</button>
-          </div>
-          <div class="card">
-            <img src="../images/girltemplate3.png" alt="Descrição da campanha 3">
-            <h3>R$ 10 off</h3>
-            <p>Em compras de 56R$ ou mais em produtos parceiros do Banese Card</p>
-            <button class="cadastre-se">Cadastrar</button>
-          </div>
-          <div class="card">
-            <img src="../images/dude1.png" alt="Descrição da campanha 4">
-            <h3>R$ 10 off</h3>
-            <p>Em compras de 70R$ ou mais, feitas no crédito</p>
-            <button class="cadastre-se">Cadastrar</button>
-          </div>
-          <div class="card">
-            <img src="../images/dude2.png" alt="Descrição da campanha 5">
-            <h3>R$ 150 de crédito</h3>
-            <p>Em depósitos de 500R$ ou mais na conta do Banese Card</p>
-            <button class="cadastre-se">Cadastrar</button>
-          </div>
-          <div class="card">
-            <img src="../images/dude3.png" alt="Descrição da campanha 6">
-            <h3>R$ 20 off</h3>
-            <p>Em compras de 80R$ ou mais, feitas no crédito do Banese Card</p>
-            <button class="cadastre-se">Cadastrar</button>
+            <h1>Criação rapida de campanha</h1>
+            <hr>
+            <p>Clique abaixo para fazer uma campanha rapidamente:</p>
+            <br><br><br><br>
+            <button id="createCamp">CRIAR CAMPANHA</button>
+            <br><br><br><br><br>
+            <hr>
+            <p>Lembre-se de verificar tudo antes da criação da campanha</p>
           </div>
         </div>
       </section>
     </main>
+    <section id="container-Parameters">
+      <div id="card-Parameters">
+        <form action="">
+          <label>Valor minimo da compra:
+            <input type="number">
+          </label> <br>
+          <label for="produto">Produto: <br>
+            <select id="produto" name="produto">
+                <option>Selecione o Produto</option>
+                <option>Nanquim</option>
+                <option>Cartão Dragão</option>
+                <option>Peixoto</option>
+                <option>Elo Mais</option>
+                <option>Outros</option>
+            </select>
+        </label> <br>
+        <label for="mcc">MCC: <br>
+            <input id="mcc" type="text" id="mcc" name="mcc" placeholder="MCC">
+        </label>
+        <br>
+        <label for="pan">Estabelecimento Comercial:
+            <input type="text" id="estabelecimento" name="estabelecimento">
+        </label> <br>
+        <label for="pan">Modo de entrada do PAN:
+            <input type="text" id="pan" name="estabelecimento">
+        </label> <br>
+        <input id="subParam" type="submit" value="CRIAR CAMPANHA">
+        </form>
+      </div>
+    </section>
+    <section id="container-Style">
+      <div id="card-Style">
+        <form action="">
+          <br>
+           <label>Nome <br>
+               <input id="campName" class="criarcamp" type="text" name="">
+           </label>
+           <br>
+           <label for="">Descrição <br>
+               <input id="campDesc" class="criarcamp" type="text" name="" id="">
+           </label>
+           <br>
+           <label>Data final da promoção <br>
+               <input id="campDate" class="criarcamp" type="date">
+           </label>
+           <br><br>
+           <p style="color: white;">Mecânicas: </p>
+           <label for=""><input type="checkbox" name="checkbox">
+           Mecânica transacional</label>
+           <br>
+           <label for=""><input type="checkbox" name="checkbox">
+           Mecânica de acúmulo</label>
+           <br>
+           <label for=""><input type="checkbox" name="checkbox">
+           Mecânica de frequência</label>
+           <br><br>
+           <label for="">Imagem da campanha <br><br>
+               <input id="img" type="file" name="" id="">
+           </label>
+           <p id="error"></p>
+           <br>
+           <div id="btnpos">
+               <input type="submit" value="Criar campanha" id="subStyle" type="submit"></input>
+        </form>
+      </div>
+    </section>
     <br><br><br><br><br><br><br>
     <footer id="footer">
       <div>

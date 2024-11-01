@@ -81,6 +81,27 @@
     background: linear-gradient(270deg, rgba(18,191,119,1) 0%, rgba(16,154,97,1) 50%, rgba(10,111,69,1) 100%);
     padding: 10px;
   }
+
+  button {
+    height: 60px;
+    width: 140px;
+
+    background-color: #28a745;
+    border:  solid #28a745 1px;
+    border-radius: 0.2rem;
+
+    color: white;
+
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  button:hover{
+    transition: 0.2s;
+    transform: scale(1.1);
+    background-color: #0A6F45;
+    border:  solid #0A6F45 1px;
+  }
   
   #sobre {
     margin-left: 32rem;
@@ -164,6 +185,87 @@
     font-size: 14px;
     cursor: pointer;
     margin-top: 10px;
+  }
+
+  input, select {
+    margin-bottom: 10px;
+
+    border: solid white 1px;
+    border-radius: 0.2rem;
+
+    font-family: 'Quicksand'; 
+  }
+
+  #subParam {
+    margin-top: 20px;
+    margin-left: 95px;
+
+    padding: 8px;
+    border: solid white 1px;
+
+    font-family: 'Quicksand'; 
+    background-color: white;
+  }
+
+  #subStyle {
+    margin-top: 10px;
+    margin-left: 95px;
+
+    padding: 8px;
+    border: solid white 1px;
+
+    font-family: 'Quicksand'; 
+    background-color: white;
+  }
+
+  label {
+    color: white;
+
+    font-family: 'Quicksand'; 
+    font-size: 18px; 
+    font-weight: bolder; 
+  }
+
+  #card-Parameters{
+    border-radius: 1rem;
+
+    padding: 20px;
+
+    height: 385px;
+    width: 385px;
+
+    background-color: #28a745;
+  }
+
+  #container-Parameters{
+    visibility: hidden;
+    position: fixed; 
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: block; 
+  }
+
+  #container-Style {
+    visibility: hidden;
+    position: fixed; 
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: block; 
+  }
+
+  #card-Style {
+    border-radius: 1rem;
+
+    padding: 15px;
+
+    height: 520px;
+    width: 385px;
+
+    background-color: #28a745;
   }
   
   .cadastre-se:hover {

@@ -1,10 +1,17 @@
 counter = document.getElementById("counter");
 button = document.getElementById("gotoCreateCamp")
 
-let i = 6;
+i = localStorage.getItem("quantCamp")
+
+if (i == null){
+    counter.innerHTML = 0
+} else {
+    counter.innerHTML = i
+}
+
+
 
 button.addEventListener('click', () => {
-    i++
     result = (i < 10) ? `0${i}` : `${i}`;
     counter.innerHTML = result;
 
