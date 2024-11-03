@@ -1,7 +1,7 @@
 counter = document.getElementById("counter");
 button = document.getElementById("gotoCreateCamp")
 
-i = localStorage.getItem("quantCamp")
+i = localStorage.getItem("quantidadeCamp")
 
 if (i == null){
     counter.innerHTML = 0

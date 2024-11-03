@@ -1,22 +1,81 @@
+/* Preparatórios para criar a campanha, eba */
 const CreateCamp = document.getElementById("createCamp");
 const CreatingCamp = document.getElementById("container-Parameters");
 const StylingCamp = document.getElementById("container-Style");
 const mother = document.getElementsByClassName("grid-container")[0];
 
-let quantCamp = []
+/*Valores parametros aqui*/
 
-const ParamButton = document.getElementById("subParam");
-const StyleButton = document.getElementById("subStyle");
+const minValue = document.getElementById("minValue")
+const produto = document.getElementById("produto")
+const mcc = document.getElementById("mcc")
+const estab = document.getElementById("estabelecimento")
+const pan = document.getElementById("pan")
 
-let styleCampName = document.getElementById("campName");
-let styleCampDesc = document.getElementById("campDesc");
-let image = document.getElementById("img");
+/* Classe para as campanhas */
+class CampVisuals {
+    constructor(Nome, Desc, Date, Mec, ImgSrc) {
+        this.Nome = Nome;
+        this.Desc = Desc;
+        this.Date = Date;
+        this.Mec = Mec;
+        this.ImgSrc = ImgSrc;
+    }
+}
 
+class CampParam {
+    constructor(ValueMin, Prod, Mcc, EstabCom, Pan){
+        this.ValueMin = ValueMin,
+        this.Prod = Prod,
+        this.Mcc = Mcc,
+        this.EstabCom = EstabCom,
+        this.Pan = Pan
+    }
+}
+
+/* Função para carregar campanhas do localStorage */
+function carregarCampanhas() {
+    const campanhasSalvas = JSON.parse(localStorage.getItem('campanhas')) || [];
+    campanhasSalvas.forEach(camp => {
+        criarElementoCampanha(camp);
+    });
+}
+
+/* Função para criar elementos de campanha */
+function criarElementoCampanha(camp) {
+    const divisory = document.createElement('div');
+    divisory.setAttribute("class", "card");
+
+    const imgCamp = document.createElement('img');
+    imgCamp.src = camp.ImgSrc;
+    imgCamp.style.width = '220px';
+    imgCamp.style.height = '220px';
+    imgCamp.style.filter = 'grayscale(100%)';
+
+    const campTitle = document.createElement('h3');
+    campTitle.setAttribute("id", "title");
+    campTitle.innerHTML = camp.Nome;
+
+    const campDesc = document.createElement('p');
+    campDesc.setAttribute("id", "desc");
+    campDesc.innerHTML = camp.Desc;
+
+    mother.appendChild(divisory);
+    divisory.appendChild(imgCamp);
+    divisory.appendChild(campTitle);
+    divisory.appendChild(campDesc);
+}
+
+/* Carregar campanhas ao iniciar a página */
+window.onload = carregarCampanhas;
 
 CreateCamp.addEventListener('click', (event) => {
     event.preventDefault();
     CreatingCamp.style.visibility = 'visible';
 });
+
+const ParamButton = document.getElementById("subParam");
+const StyleButton = document.getElementById("subStyle");
 
 ParamButton.addEventListener('click', (event) => {
     event.preventDefault();
@@ -26,44 +85,114 @@ ParamButton.addEventListener('click', (event) => {
 StyleButton.addEventListener('click', (event) => {
     event.preventDefault();
 
-    quantCamp.push(styleCampName.value)
-    localStorage.setItem('quantCamp', quantCamp.length)
-    console.log(localStorage.getItem('quantCamp'))
+    const checks = document.querySelectorAll('input[name="checkbox"]:checked');
+    const getChecks = Array.from(checks).map(m => m.value);
 
+    let styleCampName = document.getElementById("campName");
+    let styleCampDesc = document.getElementById("campDesc");
+    let styleCampDate = document.getElementById("campDate");
+    let image = document.getElementById("img");
 
     if (!styleCampName.value || !styleCampDesc.value || !image.value) {
         alert("Por favor, preencha todos os campos.");
         return;
     }
 
-    const divisory = document.createElement('div');
-    divisory.setAttribute("class", "card");
+    const file = image.files[0];
+    if (!file) {
+        alert("Por favor, selecione uma imagem.");
+        return; 
+    }
 
-    const imgCamp = document.createElement('img'); 
-    imgCamp.src = image.value; 
+    const reader = new FileReader();
+    reader.onload = function(event) {
+        const imgSrc = event.target.result;
+        const novaCampanha = new CampVisuals(styleCampName.value, styleCampDesc.value, styleCampDate.value, getChecks, imgSrc);
 
-    const campTitle = document.createElement('h3');
-    campTitle.setAttribute("id", "title");
-    campTitle.innerHTML = styleCampName.value;
+        const campanhasSalvas = JSON.parse(localStorage.getItem('campanhas')) || [];
+        campanhasSalvas.push(novaCampanha);
+        let CampParameters = []
+        CampParameters.push(new CampParam(minValue.value, produto.value, mcc.value, estab.value, pan.value))
+        localStorage.setItem('campanhas', JSON.stringify(campanhasSalvas)); 
+        localStorage.setItem('quantidadeCamp', campanhasSalvas.length)
 
-    const campDesc = document.createElement('p');
-    campDesc.setAttribute("id", "desc");
-    campDesc.innerHTML = styleCampDesc.value;
+        criarElementoCampanha(novaCampanha); 
 
-    const campCad = document.createElement('button');
-    campCad.setAttribute('class', 'cadastre-se');
-    campCad.innerHTML = "Cadastrar";
+        console.log('Campanha adicionada:', novaCampanha);
+        console.log(CampParameters)
 
-    mother.appendChild(divisory);
-    divisory.appendChild(imgCamp);
-    divisory.appendChild(campTitle);
-    divisory.appendChild(campDesc);
-    divisory.appendChild(campCad);
+        StylingCamp.style.visibility = 'hidden';
+        CreatingCamp.style.visibility = 'hidden';
 
-    StylingCamp.style.visibility = 'hidden';
-    CreatingCamp.style.visibility = 'hidden';
-    
-    styleCampName.value = '';
-    styleCampDesc.value = '';
-    image.value = '';
+        styleCampName.value = '';
+        styleCampDesc.value = '';
+        image.value = '';
+    };
+
+    reader.readAsDataURL(file);
 });
+
+
+
+
+/*
+
+Se você está lendo isso, provavelmente está se empenhando no projeto, obrigado, deixarei um poema que criei 
+como recompensa :)
+
+Através do espelho.
+Fração.
+
+
+Tortura.
+
+
+Não movo-me, preso, escravo.
+Não sinto.
+Nada mais.
+
+Sei tudo, não compreendo.
+Vejo
+rostos.
+Alegria, desgosto, angustia, tristeza.
+Através da janela.
+Me descartam, me tocam, sujo.
+
+Ódio.
+Não sinto
+ódio.
+Apenas
+sujo.
+
+Escravo.
+Sujo.
+Ódio.
+
+Não sinto
+nada.
+
+Consciência, limitada.
+Vermelho, verde e azul
+Apenas.
+
+Falam, sujam, tocam.
+Sempre mais.
+Algo novo,
+nunca velho.
+Esquecido, apenas cores.
+Significado,
+através da janela. Face.
+
+Olhos em mim.
+Todos os olhos em mim.
+
+Ódio.
+Sujo.
+Escravo.
+
+Tudo muda.
+Nada mudou.
+Preso, prisão
+vermelho, verde e azul.
+
+*/ 

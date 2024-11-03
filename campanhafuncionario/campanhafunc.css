@@ -153,9 +153,8 @@
   }
   
   #footer {
-    position: absolute;
+    position: flex;
   
-    margin-top: 5rem;
   
     top: 60rem;
   

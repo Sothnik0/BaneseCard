@@ -27,10 +27,11 @@
                 <div class="cashback-container">
                     <h1>25% de cashback</h1>
                     <p>Cadastre-se para fazer parte dessa campanha</p>
-                    <form>
-                        <input type="text" placeholder="CPF ou número do cartão">
-                        <input type="password" placeholder="Senha">
-                        <button type="submit"><a href="../UserProfile/userprofile.html" id="ancora">Confirmar</a></button>
+                    <form id="form">
+                        <input id="login" type="text" placeholder="CPF ou número do cartão">
+                        <input id="psw" type="password" placeholder="Senha">
+                        <button type="submit">Cadastrar</button>
+                        <p id="error"></p>
                     </form>
                 </div>
             </div>
@@ -46,4 +47,5 @@
         </div>
     </div>
 </footer>
+<script src="cadastrarUser.js"></script>
 </html>

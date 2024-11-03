@@ -11,7 +11,8 @@ class User {
     }
 }
 
-const UserList = [
+
+let UserList = JSON.parse(localStorage.getItem("ListAccounts")) || [
     { login: "admin", password: "admin123", type: "adm" }
 ];
 
@@ -23,7 +24,9 @@ form.addEventListener('submit', (event) => {
     } else if (UserList.some(user => user.login === userLogin.value)) {
         showError("Usuário já existe, tente outro.");
     } else {
+        
         UserList.push(new User(userLogin.value, userPsw.value, "cliente"));
+
         localStorage.setItem("userName", userLogin.value);
         location.href = "../UserProfile/userprofile.html";
     }

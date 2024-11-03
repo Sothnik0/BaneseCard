@@ -170,7 +170,7 @@
     background-color: #218838;
   }
 
-  .whitecontainer{
+  .whitecontainer, .whitecontainerc{
     background-color: white;
     border-radius: 12px;
     padding: 20px;
@@ -180,6 +180,8 @@
 }
 
 .whitecontainerc{
+    width: 32.2%;
+
     background-color: white;
     display: flex;
     justify-content: center;
