@@ -32,26 +32,21 @@
             <p id="activity">ativas</p>
          </div>
      </div>
-    
-      <section class="campanhas">
-        <div class="grid-container">
-          <div class="card">
-            <h1>Criação rápida de campanha</h1>
-            <hr>
-            <p>Clique abaixo para fazer uma campanha rapidamente:</p>
-            <br><br><br><br>
-            <button id="createCamp">CRIAR CAMPANHA</button>
-            <br><br><br><br><br>
-            <hr>
-            <p>Lembre-se de verificar tudo antes da criação da campanha</p>
+
+    <div class="notification">
+        <div class="notiglow"></div>
+        <div class="notiborderglow"></div>
+        <div class="notititle">Criação rápida de campanha</div>
+        <div class="notibody">Clique abaixo para fazer uma campanha rapidamente:</div>
+        <div id="createCamp"><h1>Criar campanha</h1><span class="button-border"></span></div>
           </div>
-        </div>
-      </section>
+
     </main>
+    
     <section id="container-Parameters">
       <div id="card-Parameters">
         <form action="">
-          <label>Valor minimo da compra:
+          <label>Valor minimo da compra: <br>
             <input id="minValue" type="number">
           </label> <br>
           <label for="produto">Produto: <br>
@@ -68,45 +63,95 @@
             <input id="mcc" type="text" id="mcc" name="mcc" placeholder="MCC">
         </label>
         <br>
-        <label for="pan">Estabelecimento Comercial:
+        <label for="pan">Estabelecimento Comercial: <br>
             <input type="text" id="estabelecimento" name="estabelecimento">
         </label> <br>
-        <label for="pan">Modo de entrada do PAN:
+        <label for="pan">Modo de entrada do PAN: <br>
             <input type="text" id="pan" name="estabelecimento">
         </label> <br>
         <input id="subParam" type="submit" value="CRIAR CAMPANHA">
         </form>
       </div>
     </section>
+
     <section id="container-Style">
       <div id="card-Style">
-        <form action="">
+        <form class="formm" action="">
           <br>
-           <label>Nome <br>
-               <input id="campName" class="criarcamp" type="text" name="">
-           </label>
-           <br>
-           <label for="">Descrição <br>
-               <input id="campDesc" class="criarcamp" type="text" name="" id="">
-           </label>
-           <br>
-           <label>Data final da promoção <br>
-               <input id="campDate" class="criarcamp" type="date">
-           </label>
-           <br><br>
-           <p style="color: white;">Mecânicas: </p>
-           <label for=""><input type="checkbox" name="checkbox">
-           Mecânica transacional</label>
-           <br>
-           <label for=""><input type="checkbox" name="checkbox">
-           Mecânica de acúmulo</label>
-           <br>
-           <label for=""><input type="checkbox" name="checkbox">
-           Mecânica de frequência</label>
-           <br><br>
-           <label for="">Imagem da campanha <br><br>
-               <input id="img" type="file" name="" id="">
-           </label>
+          <label>Nome:
+              <input id="campName" class="criarcamp" type="text" name="">
+          </label>
+          <br>
+          <label for="">Descrição:
+              <input id="campDesc" class="criarcamp" type="text" name="" id="">
+          </label>
+          <br>
+          <label>Data final da promoção
+              <input id="campDate" class="criarcamp" type="date"> <br>
+          </label>
+          <br><br>
+          <p class="mec" style="color: white;">Mecânicas: </p>
+          <div>
+            <label class="checkbox-label">
+              <input type="checkbox" name="checkbox" class="checkbox" />
+              <div class="svg-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="1em"
+                  viewBox="0 0 448 512"
+                >
+                  <path
+                    d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                  ></path>
+                </svg>
+              </div>
+              <span class="container1"></span>
+              <div class="stl">Mecânica transacional</div></label
+            >
+        
+            <label class="checkbox-label">
+              <input type="checkbox" name="checkbox" class="checkbox" />
+              <div class="svg-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="1em"
+                  viewBox="0 0 448 512"
+                >
+                  <path
+                    d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                  ></path>
+                </svg>
+              </div>
+              <span class="container1"></span>
+              <div class="stl">Mecânica de acúmulo</div></label
+            >
+      
+            <label class="checkbox-label">
+              <input type="checkbox" name="checkbox" class="checkbox" />
+              <div class="svg-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="1em"
+                  viewBox="0 0 448 512"
+                >
+                  <path
+                    d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                  ></path>
+                </svg>
+              </div>
+              <span class="container1"></span>
+              <div class="stl">Mecânica de frequência</div></label
+            >
+          
+          </div>
+          
+          <div class="text">
+              <span class="btn">Imagem da campanha</span>
+              </div>
+              <input id="file" type="file">
+          </label>
+          
+
            <p id="error"></p>
            <br>
            <div id="btnpos">
