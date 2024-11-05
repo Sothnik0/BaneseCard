@@ -59,207 +59,6 @@ li{
   -webkit-text-stroke-color: black;
 }
 
-.notification {
-  margin: 20px auto;
-  padding: 5px 10px;
-  display: flex;
-  flex-direction: column;
-  isolation: isolate;
-  position: relative;
-  width: 50rem;
-  height: 8rem;
-  background: linear-gradient(270deg, rgba(18,191,119,1) 0%, rgba(16,154,97,1) 50%, rgba(10,111,69,1) 100%);
-  border-radius: 1rem;
-  overflow: hidden;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 16px;
-  --gradient: linear-gradient(to bottom, #00ff00, #11a152, #34f13d);
-  --color: #fff;
-}
-
-.notification:before {
-  position: absolute;
-  content: "";
-  inset: 0.0625rem;
-  border-radius: 0.9375rem;
-  background: linear-gradient(270deg, rgba(18,191,119,1) 0%, rgba(16,154,97,1) 50%, rgba(10,111,69,1) 100%);
-  z-index: 2
-}
-
-.notification:after {
-  position: absolute;
-  content: "";
-  width: 0.25rem;
-  inset: 0.65rem auto 0.65rem 0.5rem;
-  border-radius: 0.125rem;
-  background: var(--gradient);
-  transition: transform 300ms ease;
-  z-index: 4;
-}
-
-.notification:hover:after {
-  transform: translateX(0.15rem)
-}
-
-.notititle {
-  color: var(--color);
-  padding: 0.65rem 0.25rem 0.4rem 1.25rem;
-  font-weight: bold;
-  font-size: 1.5rem;
-  transition: transform 300ms ease;
-  z-index: 5;
-}
-
-.notification:hover .notititle {
-  transform: translateX(0.15rem)
-}
-
-.notibody {
-  color: #fff;
-  margin-bottom: 8px;
-  padding: 0 1.25rem;
-  transition: transform 300ms ease;
-  z-index: 5;
-}
-
-.notification:hover .notibody {
-  transform: translateX(0.25rem)
-}
-
-.notiglow,
-.notiborderglow {
-  position: absolute;
-  width: 20rem;
-  height: 20rem;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(circle closest-side at center, white, transparent);
-  opacity: 0;
-  transition: opacity 300ms ease;
-}
-
-.notiglow {
-  z-index: 3;
-}
-
-.notiborderglow {
-  z-index: 1;
-}
-
-.notification:hover .notiglow {
-  opacity: 0.1
-}
-
-.notification:hover .notiborderglow {
-  opacity: 0.1
-}
-
-.note {
-  color: var(--color);
-  position: fixed;
-  top: 80%;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  font-size: 0.9rem;
-  width: 75%;
-}
-
-#createCamp {
-  z-index: 4;
-  width: 22.2rem;
-  height: 2.3rem;
-  margin-left: 1.5%;
-  border-radius: 0.5rem;
-  border: none;
-  padding-top: 4px;
-  font-size: 10px;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: #f4f0ff;
-  text-align: center;
-  position: relative;
-  cursor: pointer;
-  display: inline-block;
-  transition: transform 300ms ease;
-}
-
-#createCamp::before {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 2.5%;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  border-radius: 0.5rem;
-  background: linear-gradient(
-      270deg,
-      rgba(34, 255, 136, 1) 0%,
-      rgba(26, 198, 97, 1) 50%,
-      rgba(15, 143, 69, 1) 100%
-    );
-  box-shadow: inset 0 0 12px rgba(0, 255, 98, 0.44);
-  z-index: -1;
-}
-
-#createCamp::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 2.5%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-      270deg,
-      rgba(34, 255, 136, 1) 0%,
-      rgba(26, 198, 97, 1) 50%,
-      rgba(15, 143, 69, 1) 100%
-    );
-    box-shadow: inset 0 0 12px rgba(0, 255, 98, 0.44);
-    border-radius: 0.5rem;
-  opacity: 0;
-  z-index: -1;
-  transition: all 0.3s ease-in;
-}
-
-#createCamp:hover::after {
-  opacity: 1;
-}
-
-#createCamp:hover {
-  transform: translateX(0.15rem);
-}
-
-#createCamp-border {
-  position: absolute;
-  top: 0;
-  left: 2.5%;
-  height: 100%;
-  width: 100%;
-  border-radius: 0.5rem;
-  z-index: -1;
-}
-
-#createCamp-border::before {
-  content: "";
-  position: absolute;
-  border-radius: 0.5rem;
-  padding: 1px;
-  inset: 0;
-  background: linear-gradient(
-      270deg,
-      rgba(34, 255, 136, 1) 0%,
-      rgba(26, 198, 97, 1) 50%,
-      rgba(15, 143, 69, 1) 100%
-    );
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  pointer-events: none;
-}
-
-
-
 #bg {
   width: 84.3rem;
   height: 50rem;
@@ -272,8 +71,7 @@ li{
   font-weight: lighter;
   color: white;
   background: linear-gradient(270deg, rgba(18,191,119,1) 0%, rgba(16,154,97,1) 50%, rgba(10,111,69,1) 100%);
-  padding: 15px;
-  margin-bottom: 90px;
+  padding: 10px;
 }
 
 #firsttext {
@@ -281,9 +79,29 @@ li{
   justify-content: space-between;
   color: white;
   background: linear-gradient(270deg, rgba(18,191,119,1) 0%, rgba(16,154,97,1) 50%, rgba(10,111,69,1) 100%);
-  padding: 15px;
+  padding: 10px;
 }
 
+button {
+  height: 60px;
+  width: 140px;
+
+  background-color: #28a745;
+  border:  solid #28a745 1px;
+  border-radius: 0.2rem;
+
+  color: white;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover{
+  transition: 0.2s;
+  transform: scale(1.1);
+  background-color: #0A6F45;
+  border:  solid #0A6F45 1px;
+}
 
 #sobre {
   margin-left: 32rem;
@@ -300,8 +118,7 @@ li{
 }
 
 main {
-  margin-top: -1%;
-  padding: 0 20px;
+  padding: 20px;
 }
 
 .campanhas h2 {
@@ -337,16 +154,20 @@ main {
 
 #footer {
   position: flex;
-  margin-top: 4.5rem;
+
+
+  top: 60rem;
+
   width: 100%;
-  height: 11rem;
+  height: 13rem;
+
   background-color: #0A6F45;
 }
 
 #BaneseBaixo{
   position: relative;
 
-  top: 3rem;
+  top: 5rem;
   left: 5rem;
 }
 
@@ -365,114 +186,65 @@ main {
   margin-top: 10px;
 }
 
-select,
-input[type="text"],
-input[type="number"],
-input[type="submit"] {
-  margin-bottom: 12px;
-  padding-left: 10px;
-  width: 15rem;
-  height: 25px;
-  border: 1px solid #fff;
+input, select {
+  margin-bottom: 10px;
+
+  border: solid white 1px;
   border-radius: 0.2rem;
 
   font-family: 'Quicksand'; 
 }
 
 #subParam {
-  background: linear-gradient(
-    270deg,
-    rgba(15, 143, 69, 1) 0%,
-    rgba(26, 198, 97, 1) 50%,
-    rgba(34, 255, 136, 1) 100%
-  );
-  border: none;
-  cursor: pointer;
-  color: #fff;
-  margin-top: 8px;
-  font-weight: bold;
-  padding: 0 8px;
-  font-family: 'Quicksand';
-  transition: background 4s ease, transform 0.3s ease, opacity 0.3s ease;
-}
+  margin-top: 20px;
+  margin-left: 95px;
 
-#subParam:hover {
-  background: linear-gradient(
-    270deg,
-    rgba(34, 255, 136, 1) 0%,
-    rgba(26, 198, 97, 1) 50%,
-    rgba(15, 143, 69, 1) 100%
-  );
-  transform: scale(1.05);
-  opacity: 0.9;
+  padding: 8px;
+  border: solid white 1px;
+
+  font-family: 'Quicksand'; 
+  background-color: white;
 }
 
 #subStyle {
-  background: linear-gradient(
-    270deg,
-    rgba(15, 143, 69, 1) 0%,
-    rgba(26, 198, 97, 1) 50%,
-    rgba(34, 255, 136, 1) 100%
-  );
-  border: none;
-  cursor: pointer;
-  height: 30px;
-  color: #fff;
-  font-weight: bold;
-  font-family: 'Quicksand';
-  transition: background 4s ease, transform 0.3s ease, opacity 0.3s ease;
-}
+  margin-top: 10px;
+  margin-left: 95px;
 
-#subStyle:hover {
-  background: linear-gradient(
-    270deg,
-    rgba(34, 255, 136, 1) 0%,
-    rgba(26, 198, 97, 1) 50%,
-    rgba(15, 143, 69, 1) 100%
-  );
-  transform: scale(1.05);
-  opacity: 0.9;
-}
+  padding: 8px;
+  border: solid white 1px;
 
+  font-family: 'Quicksand'; 
+  background-color: white;
+}
 
 label {
   color: white;
+
   font-family: 'Quicksand'; 
   font-size: 18px; 
   font-weight: bolder; 
 }
 
-.mec {
-  margin-bottom: 10px;
-  font-weight: bold;
-  margin-left: -30%;
-  margin-top: -5%;
-}
-
-input[type="checkbox"] {
-
-}
-
-#card-Parameters {
+#card-Parameters{
   border-radius: 1rem;
+
   padding: 20px;
-  height: 400px;
-  width: 799px;
-  background: linear-gradient(270deg, rgba(18,191,119,1) 0%, rgba(16,154,97,1) 50%, rgba(10,111,69,1) 100%);
+
+  height: 385px;
+  width: 385px;
+
+  background-color: #28a745;
 }
 
-
-#container-Parameters {
-  text-align: center;
+#container-Parameters{
   visibility: hidden;
   position: fixed; 
   left: 50%;
-  top: 55%;
+  top: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
   display: block; 
 }
-
 
 #container-Style {
   visibility: hidden;
@@ -485,115 +257,16 @@ input[type="checkbox"] {
 }
 
 #card-Style {
-  text-align: center;
   border-radius: 1rem;
-  padding: 0 15px;
-  margin-top: 95px;
-  height: 400px;
-  width: 799px;
-  background: linear-gradient(270deg, rgba(18,191,119,1) 0%, rgba(16,154,97,1) 50%, rgba(10,111,69,1) 100%);
+
+  padding: 15px;
+
+  height: 520px;
+  width: 385px;
+
+  background-color: #28a745;
 }
 
 .cadastre-se:hover {
   background-color: #218838;
-}
-
-.checkbox-label {
-  font-size: 18px;
-  color: #fefefe;
-  font-family: Arial, Helvetica, sans-serif;
-  user-select: none;
-  display: flex;
-  position: relative;
-  align-items: center;
-  transition: all 0.3s;
-  margin-bottom: 5px;
-}
-
-.checkbox {
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
-  margin-left: 32%;
-  appearance: none;
-  border-radius: 5px;
-  background-color: #0e9b2c;
-  z-index: 2;
-  transition: all 0.3s;
-}
-
-.container1 {
-  width: 25px;
-  height: 25px;
-  position: relative;
-  top: 4px;
-  left: -4%;
-  border-radius: 5px;
-  background-color: #00ff62;
-  transition: all 0.3s;
-}
-
-.checkbox::before {
-  content: "";
-  background-color: #ffc8c8;
-  position: relative;
-  display: flex;
-  top: 45%;
-  left: 50%;
-  width: 250px;
-  height: 3px;
-  border-radius: 25px;
-  transform: translate(100px, 0px) scale(0);
-  transition: ease-out 0.15s;
-}
-
-.checkbox:checked::before {
-  transform: translateX(2em);
-  top: 12px;
-  transition: ease-out 0.15s;
-}
-
-.checkbox:hover {
-  transform: translate(4px, 4px);
-  transition: ease-out 0.15s;
-  background-color: #ffc8c8;
-}
-
-.checkbox:checked {
-  transform: translate(4px, 4px);
-  transition: ease-out 0.15s;
-  background-color: #ffc8c8;
-}
-
-.svg-icon {
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  display: flex;
-  z-index: 3;
-  top: 35%;
-  left: 33%;
-  color: #fefefe;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  transform: rotate(0deg) scale(0);
-  transition: ease-in 0.2s;
-}
-
-.checkbox:checked ~ .svg-icon {
-  transform: rotate(360deg) scale(1);
-  transition: ease-in 0.2s;
-}
-
-.stl {
-  margin-top: 0.3rem;
-}
-
-.text {
-  margin-top: 2%;
-  color: #fff;
-}
-
-#file {
-
-  color: #444;
 }
