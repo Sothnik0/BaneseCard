@@ -28,7 +28,7 @@ form.addEventListener('submit', (event) => {
         UserList.push(new User(userLogin.value, userPsw.value, "cliente"));
 
         localStorage.setItem("userName", userLogin.value);
-        location.href = "../UserProfile/userprofile.html";
+        location.href = "../UserProfile.2/userprofile.html";
     }
 });
 
