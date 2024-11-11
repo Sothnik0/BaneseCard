@@ -33,22 +33,24 @@ okIGetOut.addEventListener('click', () => {
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
-    if (login.value && password.value != '') {
-        userInfo.push(new GetInfo(login.value, password.value));
-
-        // Get the selected campaign and save it to the user's profile in localStorage
-        const registeredCampaign = JSON.parse(localStorage.getItem('selectedCampaign'));
+    event.preventDefault();
+    if (login.value && password.value !== '') {
+        // Retrieve or initialize the userCampaigns array from localStorage
         const userCampaigns = JSON.parse(localStorage.getItem('userCampaigns')) || [];
 
+        // Get the selected campaign (assuming it’s stored in selectedCampaign)
+        const registeredCampaign = JSON.parse(localStorage.getItem('selectedCampaign'));
         if (registeredCampaign) {
             userCampaigns.push(registeredCampaign);
             localStorage.setItem('userCampaigns', JSON.stringify(userCampaigns));
         }
 
-        // Redirect to user profile page
+        // Redirect to user profile after saving
         location.href = "../UserProfile.2/userprofile.html";
     } else {
         error.innerHTML = 'Algo deu errado, tente novamente';
         error.style.color = 'crimson';
     }
 });
+
+
