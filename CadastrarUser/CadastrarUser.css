@@ -98,7 +98,56 @@ p {
     margin-left: 20rem;
 }
 
+#alert{
+    width: 80%; 
+    max-width: 500px; 
+    height: auto; 
+    margin: 0 auto; 
+    padding: 1.5rem; 
+    
+    border-radius: 2rem;
+    background: linear-gradient(270deg, rgba(18,191,119,1) 0%, rgba(16,154,97,1) 50%, rgba(10,111,69,1) 100%);
+    filter: drop-shadow(-1px, -1px, 24px, 0.25);
+    backdrop-filter: blur(40px);
+}
+
+#btnAlert, #sure, #yeahImSure{
+    display: flex;
+    justify-content: center;
+}
+
+#close {
+    display: flex;
+    justify-content: end;
+}
+
+button{
+    color: crimson;
+
+    border: solid white 1px;
+
+    width: 200px;
+    padding: 10px;
+}
+
 #card {
+    width: 80%; 
+    max-width: 500px; 
+    height: auto; 
+    margin: 0 auto; 
+    padding: 1.5rem; 
+    
+    border-radius: 2rem;
+    background: linear-gradient(270deg, rgba(18,191,119,1) 0%, rgba(16,154,97,1) 50%, rgba(10,111,69,1) 100%);
+    filter: drop-shadow(-1px, -1px, 24px, 0.25);
+    backdrop-filter: blur(40px);
+}
+#miniCard{
+    visibility: hidden;
+    display: block;
+    position: fixed;
+    left: 38%;
+    top: 30%;
     width: 80%; 
     max-width: 500px; 
     height: auto; 

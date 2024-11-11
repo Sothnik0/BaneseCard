@@ -22,10 +22,19 @@
 <body>
     <main>
         <div id="content-wrapper">
-            <img id="sobre-img" src="../images/Images.png" alt="BaneseImage">
+            <div id="alert">
+                <p>Confirme seu cadastro para receber as vantagens como cashbacks e descontos</p>
+                <br><br><br>
+                <p>Clique no botão abaixo se mudar de ideia</p>
+                <br><br>
+                <div id="btnAlert">
+                    <button id="getButton" style="border-radius: 1rem; font-size: 1.2rem;">Cancelar</button>
+                </div>
+                
+            </div>
             <div id="card">
                 <div class="cashback-container">
-                    <h1>25% de cashback</h1>
+                    <h1>Quase lá!</h1>
                     <p>Cadastre-se para fazer parte dessa campanha</p>
                     <form id="form">
                         <input id="login" type="text" placeholder="CPF ou número do cartão">
@@ -37,6 +46,21 @@
             </div>
         </div>
     </main>    
+    <div>
+        <div id="miniCard">
+            <div id="close">
+                <p id="gettingOut" style="color: crimson; cursor: pointer;">X</p>
+            </div>
+            <h2>Você tem certeza que deseja cancelar?</h1>
+                <br><br>
+            <p>Você poderá voltar aqui depois se assim desejar</p>
+            <br><br>
+            <div id="sure">
+                <button id="okIGetOut" style="border-radius: 1rem; font-size: 1.2rem;" id="yeahImSure">Sim</button>
+            </div>
+            
+        </div>
+    </div>
 </body>
 <br><br><br><br>
 <footer id="footer">

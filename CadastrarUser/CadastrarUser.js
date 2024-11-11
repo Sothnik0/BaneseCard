@@ -3,6 +3,11 @@ login = document.getElementById("login")
 password = document.getElementById("psw")
 error = document.getElementById("error")
 
+button = document.getElementById("getButton")
+getOut = document.getElementById("miniCard")
+gettingOut = document.getElementById("gettingOut")
+okIGetOut = document.getElementById("okIGetOut")
+
 class GetInfo{
     constructor(login, password){
         this.login = login
@@ -11,6 +16,22 @@ class GetInfo{
 }
 
 userInfo = []
+
+button.addEventListener('click', (event) => {
+    event.preventDefault()
+
+    getOut.style.visibility = 'visible'
+})
+
+gettingOut.addEventListener('click', (event) => {
+    event.preventDefault()
+
+    getOut.style.visibility = 'hidden'
+})
+
+okIGetOut.addEventListener('click', () => {
+    location.href = "../UserProfile.2/userprofile.html"
+})
 
 form.addEventListener('submit', (event) => {
     event.preventDefault()
