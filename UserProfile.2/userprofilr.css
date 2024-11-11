@@ -18,6 +18,49 @@ nav {
     text-decoration: none;
 }
 
+#root {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-align each card in the column */
+    gap: 20px; /* Spacing between each campaign card */
+}
+
+#root .card {
+    width: 80%; /* Adjust width as needed */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff; /* White background */
+    color: #004d26; /* Text color */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+#root .card:hover {
+    transform: scale(1.05);
+}
+
+#root .card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 1rem;
+    margin-bottom: 10px;
+
+    filter: grayscale(1);
+}
+
+#root .card p.tip {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+}
+
+#root .card p.second-text {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+
 #BaneseBase {
     position: absolute;
 
