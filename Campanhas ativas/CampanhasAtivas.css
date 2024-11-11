@@ -26,16 +26,16 @@
   
   #BaneseBase {
     position: absolute;
-  
+
     border-radius: 17px;
-  
+
     left: 7rem;
     top: -2rem;
-  
-    width: 225px;
+
+    width: 295px;
     height: 174px;
     background-color: #0A6F45;
-  
+
     z-index: 1;
   }
   
@@ -134,7 +134,7 @@
   #footer {
     position: flex;
   
-    margin-top: 1rem;
+    margin-top: 6.3%;
   
     top: 60rem;
   
