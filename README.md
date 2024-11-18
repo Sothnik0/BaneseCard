@@ -22,9 +22,10 @@ Este projeto é uma aplicação web desenvolvida para gerenciar funcionalidades 
 
 2. Navegue até o diretório do projeto
 
-    cd BaneseCard
+   '''bash
+   cd BaneseCard
 
-3. Abra o arquivo index.html em seu navegador para visualizar a aplicação.
+4. Abra o arquivo index.html em seu navegador para visualizar a aplicação.
 
 ## Uso
 
