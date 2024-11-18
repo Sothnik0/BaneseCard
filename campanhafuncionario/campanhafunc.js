@@ -132,6 +132,47 @@ StyleButton.addEventListener('click', (event) => {
     reader.readAsDataURL(file);
 });
 
+// Limita o parametro código do estabelecimento
+const estabelecimento = document.getElementById("estabelecimento");
+
+estabelecimento.addEventListener("input", () => {
+    if (estabelecimento.value.length > 6) {
+        estabelecimento.value = estabelecimento.value.slice(0, 6); // Limita a 6 caracteres
+        alert("O código do estabelecimento deve ter no máximo 6 dígitos.");
+    }
+});
+
+// Dados de exemplo: mapeamento de código -> nome de estabelecimentos
+const estabelecimentos = {
+    "123456": "Supermercado Pão de Açúcar",
+    "234567": "Posto Ipiranga",
+    "345678": "Lojas Americanas",
+    "456789": "Farmácia Drogasil"
+};
+
+// Referências aos elementos
+const inputEstabelecimento = document.getElementById("estabelecimento");
+const listaEstabelecimentos = document.getElementById("lista-estabelecimentos");
+
+// Evento para capturar o código digitado
+inputEstabelecimento.addEventListener("input", () => {
+    const codigo = inputEstabelecimento.value;
+
+    if (codigo.length === 6) { // Verifica se o código tem 6 dígitos
+        if (estabelecimentos[codigo]) {
+            // Exibe o nome do estabelecimento correspondente
+            listaEstabelecimentos.style.display = "block";
+            listaEstabelecimentos.innerText = `Estabelecimento: ${estabelecimentos[codigo]}`;
+        } else {
+            // Mensagem caso o código não exista no mapeamento
+            listaEstabelecimentos.style.display = "block";
+            listaEstabelecimentos.innerText = "Código não encontrado.";
+        }
+    } else {
+        // Esconde a lista se o código for inválido ou incompleto
+        listaEstabelecimentos.style.display = "none";
+    }
+});
 
 
 
