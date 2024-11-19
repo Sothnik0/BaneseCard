@@ -78,6 +78,7 @@ Este projeto está licenciado sob a Licença MIT. Para mais detalhes, consulte o
 - Enzo Gabriel de Araújo Soares - Sothnik0 
 - Gabriel Guimarães Carvalho 
 - Edson Souza - edsonn-souza
+- Emanoel Lima Barbosa - emanoellb
 
 ## Referências
 
