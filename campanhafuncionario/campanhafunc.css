@@ -103,6 +103,17 @@ button:hover{
   border:  solid #0A6F45 1px;
 }
 
+.options {
+  height: 40px;
+  width: 120px;
+
+  margin-left: 10px;
+  margin-top: 10px;
+
+  background-color: #28a745;
+  border:  solid #28a745 1px;
+}
+
 #sobre {
   margin-left: 32rem;
 }

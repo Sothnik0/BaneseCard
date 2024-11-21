@@ -1,18 +1,13 @@
-/* Preparatórios para criar a campanha, eba */
 const CreateCamp = document.getElementById("createCamp");
 const CreatingCamp = document.getElementById("container-Parameters");
 const StylingCamp = document.getElementById("container-Style");
 const mother = document.getElementsByClassName("grid-container")[0];
+const minValue = document.getElementById("minValue");
+const produto = document.getElementById("produto");
+const mcc = document.getElementById("mcc");
+const estab = document.getElementById("estabelecimento");
+const pan = document.getElementById("pan");
 
-/*Valores parametros aqui*/
-
-const minValue = document.getElementById("minValue")
-const produto = document.getElementById("produto")
-const mcc = document.getElementById("mcc")
-const estab = document.getElementById("estabelecimento")
-const pan = document.getElementById("pan")
-
-/* Classe para as campanhas */
 class CampVisuals {
     constructor(Nome, Desc, Date, Mec, ImgSrc) {
         this.Nome = Nome;
@@ -24,25 +19,23 @@ class CampVisuals {
 }
 
 class CampParam {
-    constructor(ValueMin, Prod, Mcc, EstabCom, Pan){
-        this.ValueMin = ValueMin,
-        this.Prod = Prod,
-        this.Mcc = Mcc,
-        this.EstabCom = EstabCom,
-        this.Pan = Pan
+    constructor(ValueMin, Prod, Mcc, EstabCom, Pan) {
+        this.ValueMin = ValueMin;
+        this.Prod = Prod;
+        this.Mcc = Mcc;
+        this.EstabCom = EstabCom;
+        this.Pan = Pan;
     }
 }
 
-/* Função para carregar campanhas do localStorage */
 function carregarCampanhas() {
     const campanhasSalvas = JSON.parse(localStorage.getItem('campanhas')) || [];
-    campanhasSalvas.forEach(camp => {
-        criarElementoCampanha(camp);
+    campanhasSalvas.forEach((camp, index) => {
+        criarElementoCampanha(camp, index);
     });
 }
 
-/* Função para criar elementos de campanha */
-function criarElementoCampanha(camp) {
+function criarElementoCampanha(camp, index) {
     const divisory = document.createElement('div');
     divisory.setAttribute("class", "card");
 
@@ -60,13 +53,54 @@ function criarElementoCampanha(camp) {
     campDesc.setAttribute("id", "desc");
     campDesc.innerHTML = camp.Desc;
 
+    const editButton = document.createElement('button');
+    editButton.innerText = "Editar";
+    editButton.setAttribute("class", "options")
+    editButton.addEventListener('click', () => editarCampanha(index));
+
+    const deleteButton = document.createElement('button');
+    deleteButton.innerText = "Deletar";
+    deleteButton.setAttribute("class", "options")
+    deleteButton.addEventListener('click', () => deletarCampanha(index));
+
     mother.appendChild(divisory);
     divisory.appendChild(imgCamp);
     divisory.appendChild(campTitle);
     divisory.appendChild(campDesc);
+    divisory.appendChild(editButton);
+    divisory.appendChild(deleteButton);
 }
 
-/* Carregar campanhas ao iniciar a página */
+function editarCampanha(index) {
+    const campanhas = JSON.parse(localStorage.getItem('campanhas'));
+    const camp = campanhas[index];
+    document.getElementById("campName").value = camp.Nome;
+    document.getElementById("campDesc").value = camp.Desc;
+    document.getElementById("campDate").value = camp.Date;
+    CreatingCamp.style.visibility = 'visible';
+    StylingCamp.style.visibility = 'visible';
+
+    document.getElementById("subStyle").addEventListener('click', () => {
+        const updatedCamp = new CampVisuals(
+            document.getElementById("campName").value,
+            document.getElementById("campDesc").value,
+            document.getElementById("campDate").value,
+            camp.Mec,
+            camp.ImgSrc
+        );
+        campanhas[index] = updatedCamp;
+        localStorage.setItem('campanhas', JSON.stringify(campanhas));
+        location.reload();
+    });
+}
+
+function deletarCampanha(index) {
+    const campanhas = JSON.parse(localStorage.getItem('campanhas'));
+    campanhas.splice(index, 1);
+    localStorage.setItem('campanhas', JSON.stringify(campanhas));
+    location.reload();
+}
+
 window.onload = carregarCampanhas;
 
 CreateCamp.addEventListener('click', (event) => {
@@ -101,7 +135,7 @@ StyleButton.addEventListener('click', (event) => {
     const file = image.files[0];
     if (!file) {
         alert("Por favor, selecione uma imagem.");
-        return; 
+        return;
     }
 
     const reader = new FileReader();
@@ -111,15 +145,12 @@ StyleButton.addEventListener('click', (event) => {
 
         const campanhasSalvas = JSON.parse(localStorage.getItem('campanhas')) || [];
         campanhasSalvas.push(novaCampanha);
-        let CampParameters = []
-        CampParameters.push(new CampParam(minValue.value, produto.value, mcc.value, estab.value, pan.value))
-        localStorage.setItem('campanhas', JSON.stringify(campanhasSalvas)); 
-        localStorage.setItem('quantidadeCamp', campanhasSalvas.length)
+        let CampParameters = [];
+        CampParameters.push(new CampParam(minValue.value, produto.value, mcc.value, estab.value, pan.value));
+        localStorage.setItem('campanhas', JSON.stringify(campanhasSalvas));
+        localStorage.setItem('quantidadeCamp', campanhasSalvas.length);
 
-        criarElementoCampanha(novaCampanha); 
-
-        console.log('Campanha adicionada:', novaCampanha);
-        console.log(CampParameters)
+        criarElementoCampanha(novaCampanha, campanhasSalvas.length - 1);
 
         StylingCamp.style.visibility = 'hidden';
         CreatingCamp.style.visibility = 'hidden';
@@ -132,17 +163,15 @@ StyleButton.addEventListener('click', (event) => {
     reader.readAsDataURL(file);
 });
 
-// Limita o parametro código do estabelecimento
 const estabelecimento = document.getElementById("estabelecimento");
 
 estabelecimento.addEventListener("input", () => {
     if (estabelecimento.value.length > 6) {
-        estabelecimento.value = estabelecimento.value.slice(0, 6); // Limita a 6 caracteres
+        estabelecimento.value = estabelecimento.value.slice(0, 6);
         alert("O código do estabelecimento deve ter no máximo 6 dígitos.");
     }
 });
 
-// Dados de exemplo: mapeamento de código -> nome de estabelecimentos
 const estabelecimentos = {
     "123456": "Supermercado Pão de Açúcar",
     "234567": "Posto Ipiranga",
@@ -150,26 +179,21 @@ const estabelecimentos = {
     "456789": "Farmácia Drogasil"
 };
 
-// Referências aos elementos
 const inputEstabelecimento = document.getElementById("estabelecimento");
 const listaEstabelecimentos = document.getElementById("lista-estabelecimentos");
 
-// Evento para capturar o código digitado
 inputEstabelecimento.addEventListener("input", () => {
     const codigo = inputEstabelecimento.value;
 
-    if (codigo.length === 6) { // Verifica se o código tem 6 dígitos
+    if (codigo.length === 6) {
         if (estabelecimentos[codigo]) {
-            // Exibe o nome do estabelecimento correspondente
             listaEstabelecimentos.style.display = "block";
             listaEstabelecimentos.innerText = `Estabelecimento: ${estabelecimentos[codigo]}`;
         } else {
-            // Mensagem caso o código não exista no mapeamento
             listaEstabelecimentos.style.display = "block";
             listaEstabelecimentos.innerText = "Código não encontrado.";
         }
     } else {
-        // Esconde a lista se o código for inválido ou incompleto
         listaEstabelecimentos.style.display = "none";
     }
 });
