@@ -28,6 +28,12 @@ class CampParam {
     }
 }
 
+function atualizarContadorCampanhas() {
+    const campanhas = JSON.parse(localStorage.getItem('campanhas')) || [];
+    const quantidadeCamp = campanhas.length;
+    localStorage.setItem('quantidadeCamp', quantidadeCamp);
+}
+
 function carregarCampanhas() {
     const campanhasSalvas = JSON.parse(localStorage.getItem('campanhas')) || [];
     campanhasSalvas.forEach((camp, index) => {
@@ -55,12 +61,12 @@ function criarElementoCampanha(camp, index) {
 
     const editButton = document.createElement('button');
     editButton.innerText = "Editar";
-    editButton.setAttribute("class", "options")
+    editButton.setAttribute("class", "options");
     editButton.addEventListener('click', () => editarCampanha(index));
 
     const deleteButton = document.createElement('button');
     deleteButton.innerText = "Deletar";
-    deleteButton.setAttribute("class", "options")
+    deleteButton.setAttribute("class", "options");
     deleteButton.addEventListener('click', () => deletarCampanha(index));
 
     mother.appendChild(divisory);
@@ -90,6 +96,7 @@ function editarCampanha(index) {
         );
         campanhas[index] = updatedCamp;
         localStorage.setItem('campanhas', JSON.stringify(campanhas));
+        atualizarContadorCampanhas();
         location.reload();
     });
 }
@@ -98,6 +105,7 @@ function deletarCampanha(index) {
     const campanhas = JSON.parse(localStorage.getItem('campanhas'));
     campanhas.splice(index, 1);
     localStorage.setItem('campanhas', JSON.stringify(campanhas));
+    atualizarContadorCampanhas();
     location.reload();
 }
 
@@ -110,11 +118,6 @@ CreateCamp.addEventListener('click', (event) => {
 
 const ParamButton = document.getElementById("subParam");
 const StyleButton = document.getElementById("subStyle");
-
-ParamButton.addEventListener('click', (event) => {
-    event.preventDefault();
-    StylingCamp.style.visibility = 'visible';
-});
 
 StyleButton.addEventListener('click', (event) => {
     event.preventDefault();
@@ -145,10 +148,8 @@ StyleButton.addEventListener('click', (event) => {
 
         const campanhasSalvas = JSON.parse(localStorage.getItem('campanhas')) || [];
         campanhasSalvas.push(novaCampanha);
-        let CampParameters = [];
-        CampParameters.push(new CampParam(minValue.value, produto.value, mcc.value, estab.value, pan.value));
         localStorage.setItem('campanhas', JSON.stringify(campanhasSalvas));
-        localStorage.setItem('quantidadeCamp', campanhasSalvas.length);
+        atualizarContadorCampanhas();
 
         criarElementoCampanha(novaCampanha, campanhasSalvas.length - 1);
 
@@ -163,40 +164,6 @@ StyleButton.addEventListener('click', (event) => {
     reader.readAsDataURL(file);
 });
 
-const estabelecimento = document.getElementById("estabelecimento");
-
-estabelecimento.addEventListener("input", () => {
-    if (estabelecimento.value.length > 6) {
-        estabelecimento.value = estabelecimento.value.slice(0, 6);
-        alert("O código do estabelecimento deve ter no máximo 6 dígitos.");
-    }
-});
-
-const estabelecimentos = {
-    "123456": "Supermercado Pão de Açúcar",
-    "234567": "Posto Ipiranga",
-    "345678": "Lojas Americanas",
-    "456789": "Farmácia Drogasil"
-};
-
-const inputEstabelecimento = document.getElementById("estabelecimento");
-const listaEstabelecimentos = document.getElementById("lista-estabelecimentos");
-
-inputEstabelecimento.addEventListener("input", () => {
-    const codigo = inputEstabelecimento.value;
-
-    if (codigo.length === 6) {
-        if (estabelecimentos[codigo]) {
-            listaEstabelecimentos.style.display = "block";
-            listaEstabelecimentos.innerText = `Estabelecimento: ${estabelecimentos[codigo]}`;
-        } else {
-            listaEstabelecimentos.style.display = "block";
-            listaEstabelecimentos.innerText = "Código não encontrado.";
-        }
-    } else {
-        listaEstabelecimentos.style.display = "none";
-    }
-});
 
 
 
