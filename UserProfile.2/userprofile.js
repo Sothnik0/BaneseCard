@@ -1,19 +1,15 @@
-const img1 = document.getElementsByClassName("campimg")[0];
-const img2 = document.getElementsByClassName("campimg")[1];
-const img3 = document.getElementsByClassName("campimg")[2];
+const userName = localStorage.getItem('userName');
+const mny = document.getElementById("mny");
+const rngMny = Math.floor(Math.random() * 5000);
 
+mny.innerHTML = `R$${rngMny},0 `;
 
-const userName = localStorage.getItem('userName')
-const mny = document.getElementById("mny")
-rngMny = Math.floor(Math.random() * 5000);
+localStorage.setItem('rngMny', rngMny);
 
-mny.innerHTML = `R$${rngMny},0 `
+const hello = document.getElementById("hello");
+hello.innerHTML = `Olá, ${userName}`;
 
-localStorage.setItem('rngMny', rngMny)
-
-const hello = document.getElementById("hello")
-hello.innerHTML = `Olá ${userName}`
-
+// Carrega campanhas associadas ao usuário
 document.addEventListener('DOMContentLoaded', () => {
     const userCampaigns = JSON.parse(localStorage.getItem('userCampaigns')) || [];
     const rootContainer = document.getElementById('root');
@@ -23,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
         campaignDiv.className = 'card';
 
         const img = document.createElement('img');
-        img.src = camp.ImgSrc;
-        img.classList.add('man1'); // Ensure it has consistent styling
+        img.src = camp.ImgSrc || '../images/default.png'; // Imagem padrão se não houver
+        img.classList.add('man1'); // Garantir estilo consistente
 
         const title = document.createElement('p');
         title.classList.add('tip');
@@ -38,9 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         campaignDiv.appendChild(title);
         campaignDiv.appendChild(description);
 
-        // Append each campaign card to the root section
+        // Adiciona cada card de campanha à seção de root
         rootContainer.appendChild(campaignDiv);
     });
 });
-
-
