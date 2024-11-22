@@ -67,6 +67,22 @@ li{
   
 }
 
+.optionsCard{
+  height: 40px;
+  width: 120px;
+
+  margin-left: 4px;
+
+  background-color: #28a745;
+  border:  solid #28a745 1px;
+  border-radius: 0.2rem;
+
+  color: white;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
 #activity {
   font-weight: lighter;
   color: white;
@@ -246,9 +262,9 @@ label {
   background-color: #28a745;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Garante alinhamento à esquerda */
-  transition: height 0.3s ease; /* Transição suave ao expandir */
-  overflow: hidden; /* Evita conteúdo transbordar */
+  align-items: flex-start; 
+  transition: height 0.3s ease; 
+  overflow: hidden; 
 }
 
 
@@ -288,7 +304,7 @@ label {
 }
 
 #lista-estabelecimentos {
-  margin-top: 10px; /* Dá um espaço entre o campo e o nome */
+  margin-top: 10px; 
   color: white;
   font-family: 'Quicksand';
   font-size: 16px;
@@ -297,5 +313,5 @@ label {
   padding: 10px;
   border-radius: 5px;
   max-width: 300px;
-  display: block; /* Torna visível quando necessário */
+  display: block; 
 }

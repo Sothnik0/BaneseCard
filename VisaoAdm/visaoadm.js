@@ -6,6 +6,11 @@ function exibirContador() {
     counter.innerHTML = quantidadeCamp < 10 ? `0${quantidadeCamp}` : `${quantidadeCamp}`;
 }
 
-window.onload = exibirContador;
+window.onload = () => {
+    exibirContador();
+    window.addEventListener("storage", exibirContador); // Atualiza contador ao detectar mudanças no localStorage
+};
 
-button.addEventListener('click', exibirContador);
+button.addEventListener('click', () => {
+    exibirContador();
+});

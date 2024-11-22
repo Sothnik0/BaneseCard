@@ -28,203 +28,172 @@ class CampParam {
     }
 }
 
-function atualizarContadorCampanhas() {
-    const campanhas = JSON.parse(localStorage.getItem('campanhas')) || [];
-    const quantidadeCamp = campanhas.length;
-    localStorage.setItem('quantidadeCamp', quantidadeCamp);
-}
+const estabelecimentos = {
+    "123456": "Supermercado Pão de Açúcar",
+    "234567": "Posto Ipiranga",
+    "345678": "Lojas Americanas",
+    "456789": "Farmácia Drogasil",
+};
 
 function carregarCampanhas() {
-    const campanhasSalvas = JSON.parse(localStorage.getItem('campanhas')) || [];
-    campanhasSalvas.forEach((camp, index) => {
-        criarElementoCampanha(camp, index);
-    });
+    const campanhasSalvas = JSON.parse(localStorage.getItem("campanhas")) || [];
+    campanhasSalvas.forEach((camp) => criarElementoCampanha(camp));
 }
 
-function criarElementoCampanha(camp, index) {
-    const divisory = document.createElement('div');
+function criarElementoCampanha(camp) {
+    const divisory = document.createElement("div");
     divisory.setAttribute("class", "card");
 
-    const imgCamp = document.createElement('img');
+    const imgCamp = document.createElement("img");
     imgCamp.src = camp.ImgSrc;
-    imgCamp.style.width = '220px';
-    imgCamp.style.height = '220px';
-    imgCamp.style.filter = 'grayscale(100%)';
+    imgCamp.style.width = "220px";
+    imgCamp.style.height = "220px";
+    imgCamp.style.filter = "grayscale(100%)";
 
-    const campTitle = document.createElement('h3');
+    const campTitle = document.createElement("h3");
     campTitle.setAttribute("id", "title");
     campTitle.innerHTML = camp.Nome;
 
-    const campDesc = document.createElement('p');
+    const campDesc = document.createElement("p");
     campDesc.setAttribute("id", "desc");
     campDesc.innerHTML = camp.Desc;
 
-    const editButton = document.createElement('button');
+    // Botão de editar
+    const editButton = document.createElement("button");
     editButton.innerText = "Editar";
-    editButton.setAttribute("class", "options");
-    editButton.addEventListener('click', () => editarCampanha(index));
+    editButton.classList.add("optionsCard");
+    editButton.onclick = () => editarCampanha(camp);
 
-    const deleteButton = document.createElement('button');
-    deleteButton.innerText = "Deletar";
-    deleteButton.setAttribute("class", "options");
-    deleteButton.addEventListener('click', () => deletarCampanha(index));
+    // Botão de excluir
+    const deleteButton = document.createElement("button");
+    deleteButton.innerText = "Excluir";
+    deleteButton.classList.add("optionsCard");
+    deleteButton.onclick = () => excluirCampanha(camp);
 
-    mother.appendChild(divisory);
     divisory.appendChild(imgCamp);
     divisory.appendChild(campTitle);
     divisory.appendChild(campDesc);
     divisory.appendChild(editButton);
     divisory.appendChild(deleteButton);
+    mother.appendChild(divisory);
 }
 
-function editarCampanha(index) {
-    const campanhas = JSON.parse(localStorage.getItem('campanhas'));
-    const camp = campanhas[index];
-    document.getElementById("campName").value = camp.Nome;
-    document.getElementById("campDesc").value = camp.Desc;
-    document.getElementById("campDate").value = camp.Date;
-    CreatingCamp.style.visibility = 'visible';
-    StylingCamp.style.visibility = 'visible';
-
-    document.getElementById("subStyle").addEventListener('click', () => {
-        const updatedCamp = new CampVisuals(
-            document.getElementById("campName").value,
-            document.getElementById("campDesc").value,
-            document.getElementById("campDate").value,
-            camp.Mec,
-            camp.ImgSrc
-        );
-        campanhas[index] = updatedCamp;
-        localStorage.setItem('campanhas', JSON.stringify(campanhas));
-        atualizarContadorCampanhas();
-        location.reload();
-    });
+function editarCampanha(camp) {
+    const campanhasSalvas = JSON.parse(localStorage.getItem("campanhas")) || [];
+    const index = campanhasSalvas.findIndex(c => c.Nome === camp.Nome);
+    if (index >= 0) {
+        const novoNome = prompt("Digite o novo nome da campanha:", camp.Nome);
+        const novaDesc = prompt("Digite a nova descrição da campanha:", camp.Desc);
+        if (novoNome && novaDesc) {
+            campanhasSalvas[index].Nome = novoNome;
+            campanhasSalvas[index].Desc = novaDesc;
+            localStorage.setItem("campanhas", JSON.stringify(campanhasSalvas));
+            location.reload(); // Atualizar página
+        }
+    }
 }
 
-function deletarCampanha(index) {
-    const campanhas = JSON.parse(localStorage.getItem('campanhas'));
-    campanhas.splice(index, 1);
-    localStorage.setItem('campanhas', JSON.stringify(campanhas));
-    atualizarContadorCampanhas();
-    location.reload();
+function excluirCampanha(camp) {
+    let campanhasSalvas = JSON.parse(localStorage.getItem("campanhas")) || [];
+    campanhasSalvas = campanhasSalvas.filter(c => c.Nome !== camp.Nome);
+    localStorage.setItem("campanhas", JSON.stringify(campanhasSalvas));
+    localStorage.setItem("quantidadeCamp", campanhasSalvas.length);
+    location.reload(); // Atualizar página
 }
 
-window.onload = carregarCampanhas;
-
-CreateCamp.addEventListener('click', (event) => {
+// Abrir o card de criação de campanha
+CreateCamp.addEventListener("click", (event) => {
     event.preventDefault();
-    CreatingCamp.style.visibility = 'visible';
+    CreatingCamp.style.visibility = "visible";
+    StylingCamp.style.visibility = "hidden"; // Oculta o próximo card
+    listaEstabelecimentos.style.visibility = "hidden"; // Oculta mensagens antigas
 });
 
+// Botão para prosseguir para o próximo card
 const ParamButton = document.getElementById("subParam");
-const StyleButton = document.getElementById("subStyle");
+ParamButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    CreatingCamp.style.visibility = "hidden"; // Oculta o card atual
+    StylingCamp.style.visibility = "visible"; // Mostra o próximo card
+});
 
-StyleButton.addEventListener('click', (event) => {
+// Botão para salvar a campanha no último card
+const StyleButton = document.getElementById("subStyle");
+StyleButton.addEventListener("click", (event) => {
     event.preventDefault();
 
     const checks = document.querySelectorAll('input[name="checkbox"]:checked');
-    const getChecks = Array.from(checks).map(m => m.value);
+    const getChecks = checks.length ? Array.from(checks).map((m) => m.value) : [];
 
-    let styleCampName = document.getElementById("campName");
-    let styleCampDesc = document.getElementById("campDesc");
-    let styleCampDate = document.getElementById("campDate");
-    let image = document.getElementById("img");
+    const styleCampName = document.getElementById("campName");
+    const styleCampDesc = document.getElementById("campDesc");
+    const styleCampDate = document.getElementById("campDate");
+    const image = document.getElementById("img");
 
-    if (!styleCampName.value || !styleCampDesc.value || !image.value) {
+    if (!styleCampName.value || !styleCampDesc.value || !image.files[0]) {
         alert("Por favor, preencha todos os campos.");
         return;
     }
 
     const file = image.files[0];
-    if (!file) {
-        alert("Por favor, selecione uma imagem.");
-        return;
-    }
-
     const reader = new FileReader();
-    reader.onload = function(event) {
+    reader.onload = function (event) {
         const imgSrc = event.target.result;
-        const novaCampanha = new CampVisuals(styleCampName.value, styleCampDesc.value, styleCampDate.value, getChecks, imgSrc);
+        const novaCampanha = new CampVisuals(
+            styleCampName.value,
+            styleCampDesc.value,
+            styleCampDate.value,
+            getChecks,
+            imgSrc
+        );
 
-        const campanhasSalvas = JSON.parse(localStorage.getItem('campanhas')) || [];
+        const campanhasSalvas = JSON.parse(localStorage.getItem("campanhas")) || [];
         campanhasSalvas.push(novaCampanha);
-        localStorage.setItem('campanhas', JSON.stringify(campanhasSalvas));
-        atualizarContadorCampanhas();
+        localStorage.setItem("campanhas", JSON.stringify(campanhasSalvas));
+        localStorage.setItem("quantidadeCamp", campanhasSalvas.length);
 
-        criarElementoCampanha(novaCampanha, campanhasSalvas.length - 1);
+        criarElementoCampanha(novaCampanha);
 
-        StylingCamp.style.visibility = 'hidden';
-        CreatingCamp.style.visibility = 'hidden';
+        StylingCamp.style.visibility = "hidden"; // Oculta o último card
+        CreatingCamp.style.visibility = "hidden";
 
-        styleCampName.value = '';
-        styleCampDesc.value = '';
-        image.value = '';
+        styleCampName.value = "";
+        styleCampDesc.value = "";
+        image.value = "";
     };
 
     reader.readAsDataURL(file);
+
+    // Oculta a mensagem do estabelecimento ao confirmar
+    listaEstabelecimentos.style.visibility = "hidden";
 });
 
+// Função para exibir o nome do estabelecimento baseado no código
+const inputEstabelecimento = document.getElementById("estabelecimento");
+const listaEstabelecimentos = document.getElementById("lista-estabelecimentos");
 
+inputEstabelecimento.addEventListener("input", () => {
+    const codigo = inputEstabelecimento.value;
 
+    if (codigo.length === 6) {
+        if (estabelecimentos[codigo]) {
+            listaEstabelecimentos.style.visibility = "visible";
+            listaEstabelecimentos.innerText = `Estabelecimento: ${estabelecimentos[codigo]}`;
+        } else {
+            listaEstabelecimentos.style.visibility = "visible";
+            listaEstabelecimentos.innerText = "Código não encontrado.";
+        }
+    } else {
+        listaEstabelecimentos.style.visibility = "hidden";
+    }
+});
 
-/*
+// Sempre exibe a mensagem do estabelecimento ao começar uma nova campanha
+CreateCamp.addEventListener("click", () => {
+    listaEstabelecimentos.style.visibility = "visible";
+    listaEstabelecimentos.innerText = "";
+});
 
-Se você está lendo isso, provavelmente está se empenhando no projeto, obrigado, deixarei um poema que criei 
-como recompensa :)
-
-Através do espelho.
-Fração.
-
-
-Tortura.
-
-
-Não movo-me, preso, escravo.
-Não sinto.
-Nada mais.
-
-Sei tudo, não compreendo.
-Vejo
-rostos.
-Alegria, desgosto, angustia, tristeza.
-Através da janela.
-Me descartam, me tocam, sujo.
-
-Ódio.
-Não sinto
-ódio.
-Apenas
-sujo.
-
-Escravo.
-Sujo.
-Ódio.
-
-Não sinto
-nada.
-
-Consciência, limitada.
-Vermelho, verde e azul
-Apenas.
-
-Falam, sujam, tocam.
-Sempre mais.
-Algo novo,
-nunca velho.
-Esquecido, apenas cores.
-Significado,
-através da janela. Face.
-
-Olhos em mim.
-Todos os olhos em mim.
-
-Ódio.
-Sujo.
-Escravo.
-
-Tudo muda.
-Nada mudou.
-Preso, prisão
-vermelho, verde e azul.
-
-*/ 
+window.onload = () => {
+    carregarCampanhas();
+};
