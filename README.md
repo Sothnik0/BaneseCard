@@ -77,7 +77,7 @@ Este projeto está licenciado sob a Licença MIT. Para mais detalhes, consulte o
 - Bernardo Santana Gomes Corrêa - Bernardo-web
 - Enzo Gabriel de Araújo Soares - Sothnik0 
 - Gabriel Guimarães Carvalho 
-- Edson Souza - edsonn-souza
+- Edson Carlos Gomes de Souza - edsonn-souza
 - Emanoel Lima Barbosa - emanoellb
 
 ## Referências
