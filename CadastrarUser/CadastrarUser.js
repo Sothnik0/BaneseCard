@@ -1,3 +1,4 @@
+// Seleção de elementos do DOM
 const form = document.getElementById("form");
 const login = document.getElementById("login");
 const password = document.getElementById("psw");
@@ -8,6 +9,7 @@ const getOut = document.getElementById("miniCard");
 const gettingOut = document.getElementById("gettingOut");
 const okIGetOut = document.getElementById("okIGetOut");
 
+// Classe para representar o usuário
 class GetInfo {
     constructor(login, password) {
         this.login = login;
@@ -15,38 +17,50 @@ class GetInfo {
     }
 }
 
-// Array para armazenar usuários cadastrados
-const userInfo = JSON.parse(localStorage.getItem("users")) || [];
+// Recupera usuários do localStorage ou cria um array vazio
+let userInfo;
+try {
+    userInfo = JSON.parse(localStorage.getItem("users")) || [];
+} catch (error) {
+    console.error("Erro ao carregar usuários do localStorage:", error);
+    userInfo = [];
+}
 
 // Exibe o miniCard ao clicar no botão
-button.addEventListener('click', (event) => {
+button?.addEventListener('click', (event) => {
     event.preventDefault();
-    getOut.style.visibility = 'visible';
+    if (getOut) getOut.style.visibility = 'visible';
 });
 
 // Esconde o miniCard ao clicar no botão de sair
-gettingOut.addEventListener('click', (event) => {
+gettingOut?.addEventListener('click', (event) => {
     event.preventDefault();
-    getOut.style.visibility = 'hidden';
+    if (getOut) getOut.style.visibility = 'hidden';
 });
 
-// Redireciona para o perfil do usuário
-okIGetOut.addEventListener('click', () => {
+// Redireciona para o perfil do usuário ao clicar em "okIGetOut"
+okIGetOut?.addEventListener('click', () => {
     location.href = "../UserProfile.2/userprofile.html";
 });
 
 // Função de cadastro de usuários e associação de campanhas
-form.addEventListener('submit', (event) => {
+form?.addEventListener('submit', (event) => {
     event.preventDefault();
-    
-    // Validação dos campos
-    if (login.value.trim() !== '' && password.value.trim() !== '') {
-        // Cria novo usuário
+
+    // Validação de campos de entrada
+    if (login.value.trim() === '' || password.value.trim() === '') {
+        error.innerHTML = 'Por favor, preencha todos os campos corretamente.';
+        error.style.color = 'crimson';
+        console.warn("Erro: Campos de login ou senha estão vazios.");
+        return;
+    }
+
+    // Cria e salva o novo usuário
+    try {
         const newUser = new GetInfo(login.value, password.value);
         userInfo.push(newUser);
-
-        // Salva os usuários no localStorage
         localStorage.setItem("users", JSON.stringify(userInfo));
+        console.log("Usuário cadastrado com sucesso:", newUser);
 
         // Salva campanhas associadas (se houver)
         const userCampaigns = JSON.parse(localStorage.getItem('userCampaigns')) || [];
@@ -54,16 +68,17 @@ form.addEventListener('submit', (event) => {
         if (registeredCampaign) {
             userCampaigns.push(registeredCampaign);
             localStorage.setItem('userCampaigns', JSON.stringify(userCampaigns));
+            console.log("Campanhas associadas salvas:", registeredCampaign);
         }
 
         // Salva o nome do usuário para exibição na página de perfil
         localStorage.setItem("userName", login.value);
 
-        // Redireciona para o perfil do usuário após salvar
+        // Redireciona para o perfil do usuário
         location.href = "../UserProfile.2/userprofile.html";
-    } else {
-        // Mostra mensagem de erro se os campos estiverem vazios
-        error.innerHTML = 'Por favor, preencha todos os campos corretamente.';
+    } catch (err) {
+        console.error("Erro ao processar o cadastro:", err);
+        error.innerHTML = 'Ocorreu um erro. Tente novamente.';
         error.style.color = 'crimson';
     }
 });
