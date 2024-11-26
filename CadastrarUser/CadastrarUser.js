@@ -1,3 +1,4 @@
+// Seleção dos elementos DOM
 const login = document.getElementById("login");
 const password = document.getElementById("psw");
 const error = document.getElementById("error");
@@ -8,7 +9,8 @@ const cancelConfirmation = document.getElementById("miniCard");
 const confirmCancel = document.getElementById("okIGetOut");
 const closeCancel = document.getElementById("gettingOut");
 
-accept = () => {
+// Função para aceitar os termos e aderir à campanha
+window.accept = () => {
     const registeredCampaign = JSON.parse(localStorage.getItem('selectedCampaign'));
 
     if (registeredCampaign) {
@@ -26,27 +28,33 @@ accept = () => {
     }
 };
 
-cancelCampaign = () => {
+// Função para exibir o modal de cancelamento
+window.cancelCampaign = () => {
     cancelConfirmation.style.visibility = 'visible';
 };
 
+// Evento para confirmar o cancelamento
 confirmCancel.addEventListener('click', () => {
     location.href = "../UserProfile.2/userprofile.html";
 });
 
+// Evento para fechar o modal de cancelamento
 closeCancel.addEventListener('click', () => {
     cancelConfirmation.style.visibility = 'hidden';
 });
 
-openTab = () => {
+// Função para abrir os termos de condições
+window.openTab = () => {
     terms.style.visibility = 'visible';
 };
 
+// Evento para fechar os termos de condições
 quit.addEventListener('click', () => {
     terms.style.visibility = 'hidden';
 });
 
+// Evento para cancelar a campanha
 cancelButton.addEventListener('click', (event) => {
     event.preventDefault();
-    cancelCampaign();
+    window.cancelCampaign();
 });
