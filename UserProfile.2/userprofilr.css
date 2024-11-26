@@ -164,6 +164,43 @@ p {
     background: linear-gradient(270deg, rgba(18,191,119,1) 0%, rgba(16,154,97,1) 50%, rgba(10,111,69,1) 100%);
 }
 
+.delete-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    color: crimson !important; /* Garantir que a cor seja sempre vermelha */
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none; /* Remove possíveis sublinhados */
+    background: none; /* Remove fundo */
+    outline: none; /* Remove bordas padrão */
+    transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.delete-btn:visited,
+.delete-btn:active,
+.delete-btn:focus {
+    color: crimson !important; /* Mantém o vermelho em todos os estados */
+    text-decoration: none; /* Remove efeitos de link */
+}
+
+.delete-btn:hover {
+    color: darkred !important; /* Vermelho mais escuro no hover */
+    transform: scale(1.2); /* Aumenta o tamanho no hover */
+}
+
+.card {
+    position: relative; /* Necessário para posicionar o botão dentro do card */
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
 #grid {
     display: grid;
     width: 80rem;
