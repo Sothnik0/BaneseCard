@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (userCampaigns.length === 0) {
         const emptyMessage = document.createElement('p');
         emptyMessage.textContent = "Você ainda não aderiu a nenhuma campanha.";
+        emptyMessage.style.color = 'black'
         rootContainer.appendChild(emptyMessage);
         return;
     }
