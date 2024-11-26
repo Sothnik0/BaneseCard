@@ -1,116 +1,73 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CadastrarUser.css">
+    <!-- CSS local -->
+    <link rel="stylesheet" href="./CadastrarUser.css">
+    <!-- Favicon com caminho ajustado -->
     <link rel="shortcut icon" href="../images/logo2basese.svg" type="image/x-icon">
-    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Aderir</title>
 </head>
-<nav>
-    <div id="BaneseBase">
-        <a href="../index.html"><img id="BaneseCima" src="../assets/download (14) 1.png" alt="BaneseLogo" srcset=""></a>
-    </div>
-    <ul>
-        <li><a id="sobre" href="../Sobre/sobre.html" rel="Sobre">Sobre</a></li>
-        <li><a id="mulvi" href="../Mulvi/mulvi.html" rel="Mulvi">Mulvi</a></li>
-        <li><a id="principal" href="https://www.banesecard.com.br/" rel="Site principal">Site principal</a></li>
-    </ul>
-</nav>
-<br><br><br>
 <body>
+    <nav>
+        <div id="BaneseBase">
+            <!-- Caminho para imagem -->
+            <a href="../index.html"><img id="BaneseCima" src="../images/download (14) 1.png" alt="BaneseLogo"></a>
+        </div>
+        <ul>
+            <li><a id="sobre" href="../Sobre/sobre.html" rel="Sobre">Sobre</a></li>
+            <li><a id="mulvi" href="../Mulvi/mulvi.html" rel="Mulvi">Mulvi</a></li>
+            <li><a id="principal" href="https://www.banesecard.com.br/" rel="Site principal">Site principal</a></li>
+        </ul>
+    </nav>
+    <br><br><br>
     <main>
         <div id="content-wrapper">
             <div id="alert">
                 <p>Confirme seu cadastro para receber as vantagens como cashbacks e descontos</p>
-                <br><br><br>
+                <br><br>
                 <p>Clique no botão abaixo se mudar de ideia</p>
                 <br><br>
                 <div id="btnAlert">
-                    <button id="getButton" style="border-radius: 1rem; font-size: 1.2rem;">Cancelar</button>
+                    <button id="getButton" style="border-radius: 1rem; font-size: 1.2rem;" onclick="closeTab()">Cancelar</button>
                 </div>
-                
             </div>
             <div id="card">
                 <div class="cashback-container">
-                    <h1 style="border: solid black 0px;">Quase lá!</h1>
+                    <h1>Quase lá!</h1>
                     <p>Para aderir a campanha com sucesso, é necessário aceitar os termos de condição</p>
-                    <p style="color: #000049; cursor: pointer;" onclick="openTab()">Ler termos</p> <br><br>
+                    <p style="color: #000049; cursor: pointer;" onclick="openTab()">Ler termos</p>
                     <button onclick="accept()">Aderir</button>
                     <p id="error"></p>
                 </div>
             </div>
         </div>
-    </main>    
-    <div style="position: fixed; top: 10px; left: 35%;" id="terms-container">
+    </main>
+
+    <div id="terms-container">
         <div id="terms">
-            <div style="display: flex; justify-content: end; overflow-y: auto;">
+            <div style="display: flex; justify-content: end;">
                 <p style="color: crimson; cursor: pointer;" id="quit">X</p>
             </div>
-            <p style="color: white; width: 500px;">
-                Bem-vindo à Campanha de Cashback Banese Card! <br> Ao participar, você aceita as condições abaixo:
-                <br>
-
-                1. Elegibilidade
-                Campanha válida para titulares do Banese Card em situação regular. Compras fora do período ou em situações de inadimplência não são elegíveis.
-                <br>
-
-                2. Período
-                Vigência do inicio ao fim, podendo ser alterada pelo Banese Card.
-                <br>
-
-                3. Funcionamento
-
-                Cashback aplicado em compras elegíveis.
-                Percentual de valor em % com limite.
-                Não válido para pagamentos de boletos, saques e outras transações não autorizadas. <br>
-                4. Crédito do Cashback
-                Valor creditado em até cumprir o prazo de dias na fatura. Suspenso em caso de irregularidades.
-                <br>
-
-                5. Cancelamentos
-                Compras canceladas terão o cashback estornado. Fraudes resultam na exclusão da campanha.
-                <br>
-
-                6. Disposições Gerais
-                Banese Card pode alterar ou encerrar a campanha sem aviso prévio, assegurando direitos adquiridos. Em caso de dúvidas, contate o Banese.
-                <br>
-
-                7. Aceitação
-                Ao participar, você concorda com os termos descritos acima.
-                <br>
-                <div style="display: flex; justify-content: center;">
-                    <button style="border-radius: 12px; color: black;" onclick="accept()">Aceito os termos de condições</button>
-                </div>
+            <p>
+                Bem-vindo à Campanha de Cashback Banese Card! Ao participar, você aceita as condições descritas.
             </p>
+            <button onclick="accept()">Aceito os termos de condições</button>
         </div>
     </div>
-    <div>
-        <div id="miniCard">
-            <div id="close">
-                <p id="gettingOut" style="color: crimson; cursor: pointer;">X</p>
-            </div>
-            <h2>Você tem certeza que deseja cancelar?</h1>
-                <br><br>
-            <p>Você poderá voltar aqui depois se assim desejar</p>
-            <br><br>
-            <div id="sure">
-                <button id="okIGetOut" style="border-radius: 1rem; font-size: 1.2rem;" id="yeahImSure">Sim</button>
-            </div>
-            
-        </div>
-    </div>
-</body>
-<br><br><br><br>
-<footer id="footer">
-    <div>
-        <img id="BaneseBaixo" src="../images/download (14) 1.png" alt="">
+
+    <footer id="footer">
+        <div>
+            <img id="BaneseBaixo" src="../images/logo2basese.svg" alt="Banese Logo">
             <p class="footertxt">© 2024 Banco do Estado de Sergipe S.A.</p>
-            <p class="footertxt">Politica de privacidade</p>
+            <p class="footertxt">Política de Privacidade</p>
         </div>
-    </div>
-</footer>
-<script src="cadastrarUser.js" defer></script>
+    </footer>
+
+    <!-- JavaScript local -->
+    <script src="./CadastrarUser.js" defer></script>
+</body>
 </html>
