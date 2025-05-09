@@ -67,7 +67,7 @@ Este projeto está licenciado sob a Licença MIT. Para mais detalhes, consulte o
 
 ## Autores
 
-- Artur Nalbert de Oliveira Nascimento - ArturNalbert
+- Artur Nalbert de Oliveira Nascimento - @ArturNalbert
 - Idel Vitor Machado Macedo - IdelVitor
 - Jean Oliveira nascimento de Carvalho
 - Jhoan Guilherme Silva santos
@@ -75,7 +75,7 @@ Este projeto está licenciado sob a Licença MIT. Para mais detalhes, consulte o
 - Pedro Henrique de Jesus Botelho
 - João Guilherme Santos Lima - Guilima1700
 - Bernardo Santana Gomes Corrêa - Bernardo-web
-- Enzo Gabriel de Araújo Soares - Sothnik0 
+- Enzo Gabriel de Araújo Soares - @Sothnik0 
 - Gabriel Guimarães Carvalho 
 - Edson Carlos Gomes de Souza - edsonn-souza
 - Emanoel Lima Barbosa - emanoellb
